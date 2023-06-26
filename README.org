@@ -116,6 +116,21 @@
     G.add_node("cpp_ldf-101", title = "Elements of Syntactical Program Analysis I")
   #+END_SRC
   
+  #+BEGIN_SRC python
+    G.add_edge("cpp_ldf-101", "cpp_ldf-102")
+    G.add_edge("cpp_ldf-101", "cpp_ldf-103")
+    G.add_edge("cpp_ldf-101", "cpp_ldf-201")
+    G.add_edge("cpp_ldf-102", "cpp_ldf-202")
+    G.add_edge("cpp_ldf-103", "cpp_ldf-203")
+    G.add_edge("cpp_ldf-203", "cpp_ldf-303")
+    G.add_edge("cpp_ldf-303", "cpp_ldf-403")
+    G.add_edge("cpp_ldf-201", "cpp_ldf-302")
+    G.add_edge("cpp_ldf-202", "cpp_ldf-302")
+    G.add_edge("cpp_ldf-203", "cpp_ldf-303")
+    G.add_edge("cpp_ldf-302", "cpp_ldf-401")
+    G.add_edge("cpp_ldf-303", "cpp_ldf-401")
+  #+END_SRC
+
   Some docs:
   - https://gist.github.com/lucaswiman/68799262995e056ebf05e864ec6647d7
   - https://stackoverflow.com/questions/39657395/how-to-draw-properly-networkx-graphs
