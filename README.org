@@ -9,132 +9,32 @@
   - viable
   - delivery options
 
-  #+BEGIN_SRC sh
-    # get issues
-    gh api \
-       -H "Accept: application/vnd.github+json" \
-       -H "X-GitHub-Api-Version: 2022-11-28" \
-       /repos/github/codeql-learning-catalog/issues?state=all | jq . > issues
+  It uses https://networkx.org for graph manipulation, graphviz for drawing.
 
-    # Get issue comments individually?
-    gh api \
-       -H "Accept: application/vnd.github+json" \
-       -H "X-GitHub-Api-Version: 2022-11-28" \
-       /repos/github/codeql-learning-catalog/issues/46/comments | jq . > comments
-
-    # This misses pieces
-    gh api \
-      -H "Accept: application/vnd.github+json" \
-      -H "X-GitHub-Api-Version: 2022-11-28" \
-      /repos/github/codeql-learning-catalog/issues/comments?state=all | jq . > comments
-
-    # format
-    jq . < issues | sponge issues 
-    jq . < comments | sponge comments 
-
-    # 
-    jq '.[] |
-       if (.title | startswith("[CodeQL")) then . else empty end
-       ' < issues |less
-  #+END_SRC
-
-  Use https://networkx.org for graph manipulation.
+* Development Setup
+  First, install conda.  Then, use the following Python setup on mac as example.
+  Adjust as needed for your platform.
   #+BEGIN_SRC sh
     cd ~/work-gh/scurvy/mac/arm64
     conda create  -p scurvy
     conda update -n base -c defaults conda
     conda activate scurvy/
-    conda install -c plotly plotly=5.15.0
     conda install jupyter numpy pip seaborn pygraphviz pyvis \
           jupyter-dash ipycytoscape
 
     cd ~/work-gh/scurvy/mac/arm64/scurvy
     conda activate .
     pip install pertdist networkx
-    pip install jupyter-dash
-    pip install "jupyterlab>=3" "ipywidgets>=7.6"
   #+END_SRC
 
-  Work in jupyter:
+  To work in jupyter notebook:
   #+BEGIN_SRC sh
     conda activate ~/work-gh/scurvy/mac/arm64/scurvy
     cd ~/work-gh/scurvy
     jupyter notebook&
   #+END_SRC
 
-  #+BEGIN_SRC sh
-    cd ~/local/scurvy/ && jq '.[] | .title' < issues | grep -i ldf
-    # jq '.[] | 
-    #    if (.title | startswith("[CodeQL")) then (.title, .body) else empty end
-    #    ' < issues 
-  #+END_SRC
-
-  Issues, cpp and ldf:
-  https://github.com/github/codeql-learning-catalog/issues?q=is%3Aissue+ldf+label%3Alanguage-cpp
-
-  #+BEGIN_SRC text
-    [CodeQL Workshop Development]: LDF-303: Dataflow III language-cpp  workshop-development
-    [CodeQL Workshop Development]: LDF-303 - Reasoning about Integer Sign Conversion language
-    [CodeQL Workshop Development]: LDF-302: Advance Program Analysis II language-cpp workshop-development
-    [CodeQL Workshop Development]: LDF-401: Advanced Program Analysis IV -- Dangling pointers language-cpp  workshop-development
-    [CodeQL Workshop Development]: LDF-204: Reasoning about Runtime Values language-cpp workshop-development
-    [CodeQL Workshop Development]: LDF-203: Dataflow II language-cpp  workshop-development
-    [CodeQL Workshop Development]: LDF-202: Reasoning about Control Flow II language-cpp workshop-development
-    [CodeQL Workshop Development]: LDF-201: Elements of Syntactical Program Analysis II language-cpp workshop-development
-    [CodeQL Workshop Development]: LDF-103: Dataflow I language-cpp  workshop-development
-    [CodeQL Workshop Development]: LDF-102: Reasoning about Control Flow I language-cpp workshop-development
-    [CodeQL Workshop Development]: LDF-101: Elements of Syntactical Program Analysis I language-cpp workshop-development
-  #+END_SRC
-
-  Simplified:
-  #+BEGIN_SRC text
-    cpp_ldf-303: Dataflow III
-    cpp_ldf-303: Reasoning about Integer Sign Conversion
-    cpp_ldf-302: Advance Program Analysis II
-    cpp_ldf-401: Advanced Program Analysis IV -- Dangling pointers
-    cpp_ldf-204: Reasoning about Runtime Values 
-    cpp_ldf-203: Dataflow II 
-    cpp_ldf-202: Reasoning about Control Flow II 
-    cpp_ldf-201: Elements of Syntactical Program Analysis II 
-    cpp_ldf-103: Dataflow I 
-    cpp_ldf-102: Reasoning about Control Flow I 
-    cpp_ldf-101: Elements of Syntactical Program Analysis I 
-  #+END_SRC
-  
-  As networkx script:
-  #+BEGIN_SRC python
-    G.add_node("cpp_ldf-303", title = "Dataflow III")
-    G.add_node("cpp_ldf-303", title = "Reasoning about Integer Sign Conversion")
-    G.add_node("cpp_ldf-302", title = "Advance Program Analysis II")
-    G.add_node("cpp_ldf-401", title = "Advanced Program Analysis IV -- Dangling pointers")
-    G.add_node("cpp_ldf-204", title = "Reasoning about Runtime Values")
-    G.add_node("cpp_ldf-203", title = "Dataflow II")
-    G.add_node("cpp_ldf-202", title = "Reasoning about Control Flow II")
-    G.add_node("cpp_ldf-201", title = "Elements of Syntactical Program Analysis II")
-    G.add_node("cpp_ldf-103", title = "Dataflow I")
-    G.add_node("cpp_ldf-102", title = "Reasoning about Control Flow I")
-    G.add_node("cpp_ldf-101", title = "Elements of Syntactical Program Analysis I")
-  #+END_SRC
-  
-  #+BEGIN_SRC python
-    G.add_edge("cpp_ldf-101", "cpp_ldf-102")
-    G.add_edge("cpp_ldf-101", "cpp_ldf-103")
-    G.add_edge("cpp_ldf-101", "cpp_ldf-201")
-    G.add_edge("cpp_ldf-102", "cpp_ldf-202")
-    G.add_edge("cpp_ldf-103", "cpp_ldf-203")
-    G.add_edge("cpp_ldf-203", "cpp_ldf-303")
-    G.add_edge("cpp_ldf-303", "cpp_ldf-403")
-    G.add_edge("cpp_ldf-201", "cpp_ldf-302")
-    G.add_edge("cpp_ldf-202", "cpp_ldf-302")
-    G.add_edge("cpp_ldf-203", "cpp_ldf-303")
-    G.add_edge("cpp_ldf-302", "cpp_ldf-401")
-    G.add_edge("cpp_ldf-303", "cpp_ldf-401")
-  #+END_SRC
-
   Some docs:
-  - https://gist.github.com/lucaswiman/68799262995e056ebf05e864ec6647d7
-  - https://stackoverflow.com/questions/39657395/how-to-draw-properly-networkx-graphs
   - https://pygraphviz.github.io
   - https://networkx.org/documentation/latest/reference/readwrite/gml.html
   - https://networkx.org/documentation/latest/reference/drawing.html
-  - 
