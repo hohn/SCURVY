@@ -37,13 +37,20 @@
      Gt = nx.DiGraph()
 
      # Set defaults
-     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
+     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9,
+                        'stylesheet': 'graphstyle.css',
+                        }
      Gt.graph['node']={'shape':'rect', 'fontsize':12}
-     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12,
+                        }
 
-     G.graph['graph']={'rankdir':'TD', 'fontsize':9}
+     G.graph['graph']={'rankdir':'TD', 'fontsize':9,
+                        'stylesheet': 'graphstyle.css',
+                        }
      G.graph['node']={'shape':'rect', 'fontsize':12}
-     G.graph['edges']={'arrowsize':'4.0', 'fontsize':12, 'penwidth':6, 'stroke-width':6}
+     G.graph['edges']={'arrowsize':'4.0', 'fontsize':12, 'penwidth':6, 'stroke-width':6,
+                        'stylesheet': 'graphstyle.css',
+                        }                  
 
      # Add whole path, nodes and edges.
      colnum = 0
