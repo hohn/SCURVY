@@ -30,10 +30,11 @@ UNDER CONSTRUCTION!!
 * Using this project
   On your desktop
   1. Clone this repository *or* download it as zip file.
-  2. Open toc/index.html
+  2. Open notes/existing.html
   3. Browse.
 
   *or* online
+
   https://htmlpreview.github.io/?https://github.com/hohn/SCURVY/blob/master/notes/existing.html
 
 * Development Setup

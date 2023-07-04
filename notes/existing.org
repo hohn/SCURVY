@@ -43,23 +43,35 @@
 
      G.graph['graph']={'rankdir':'TD', 'fontsize':9}
      G.graph['node']={'shape':'rect', 'fontsize':12}
-     G.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+     G.graph['edges']={'arrowsize':'4.0', 'fontsize':12, 'penwidth':6, 'stroke-width':6}
 
      # Add whole path, nodes and edges.
+     colnum = 0
      def add_path(*path):
+         global colnum
          for ndi in range(0, len(path)-1):
              Gt.add_node(path[ndi])
-             Gt.add_edge(path[ndi], path[ndi+1])
+             Gt.add_edge(path[ndi], path[ndi+1], color=sc.colors2[colnum])
              G.add_node(path[ndi])
-             G.add_edge(path[ndi], path[ndi+1])
+             G.add_edge(path[ndi], path[ndi+1], color=sc.colors2[colnum])
          Gt.add_node(path[ndi+1])
          G.add_node(path[ndi+1])
+         colnum += 1
 
      def draw(graph, filename):
          svg = nx.nx_agraph.to_agraph(graph).draw(prog='dot', format='svg')
-         with open(filename, 'w') as f:
-             f.write(svg.decode())
+         with open(filename, 'wb') as f:
+             # f.write(svg.decode())
+             f.write(svg)
          return(filename)
+
+     # add_path(
+     #     "test-start-100",
+     #     "test-a-100",
+     #     "test-b-100",
+     #     "test-goal-110",
+     # )
+     # draw(G, 'g001.svg')
 
      'ok'
    #+END_SRC
@@ -83,7 +95,6 @@
    #+END_SRC
 
    #+RESULTS:
-   [[file:g001.svg]]
 
 ** https://github.com/advanced-security/codeql-workshops-staging/blob/master/cpp/introduction/session-3/codeql-workshop-cpp-global-data-flow.md
 
