@@ -1,0 +1,335 @@
+# -*- mode: org; org-confirm-babel-evaluate: nil; coding: utf-8 -*-
+#+OPTIONS: org-confirm-babel-evaluate:nil
+# Created 2020-10-19 Mon 14:11
+#+TITLE: 
+#+AUTHOR: Michael Hohn
+#+LANGUAGE:  en
+#+TEXT:      
+#+OPTIONS: ^:{} H:2 num:t \n:nil @:t ::t |:t ^:nil f:t *:t TeX:t LaTeX:t skip:nil p:nil
+#+OPTIONS: toc:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./l3style.css"/>
+#+HTML: <div id="toc">
+#+TOC: headlines 2        insert TOC here, with two headline levels
+#+HTML: </div> 
+# 
+#+HTML: <div id="org-content">
+
+* Existing workshops in single large repository
+  The repository https://github.com/advanced-security/codeql-workshops-staging has
+  a collection of workshops.  Some of them have been separated out below for
+  better usability.
+
+* Existing workshops in separate repositories
+** TODO SCURVY: Untangle this
+   - [ ] This is mixing actual workshops that are based on learning objectives
+     with
+   - [ ] an imaginary structure of school-style classes.
+
+   First identify the learning paths, then their (common?) components. 
+
+** Common
+   #+BEGIN_SRC python :results value pp :session main :exports both :python ipython
+     import networkx as nx
+
+     import scurvy as sc
+
+     G = nx.MultiDiGraph()
+     Gt = nx.DiGraph()
+
+     # Set defaults
+     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
+     Gt.graph['node']={'shape':'rect', 'fontsize':12}
+     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+
+     G.graph['graph']={'rankdir':'TD', 'fontsize':9}
+     G.graph['node']={'shape':'rect', 'fontsize':12}
+     G.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+
+     # Add whole path, nodes and edges.
+     def add_path(*path):
+         for ndi in range(0, len(path)-1):
+             Gt.add_node(path[ndi])
+             Gt.add_edge(path[ndi], path[ndi+1])
+             G.add_node(path[ndi])
+             G.add_edge(path[ndi], path[ndi+1])
+         Gt.add_node(path[ndi+1])
+         G.add_node(path[ndi+1])
+
+     def draw(graph, filename):
+         svg = nx.nx_agraph.to_agraph(graph).draw(prog='dot', format='svg')
+         with open(filename, 'w') as f:
+             f.write(svg.decode())
+         return(filename)
+
+     'ok'
+   #+END_SRC
+
+   #+RESULTS:
+   : 'ok'
+
+
+** https://github.com/hohn/codeql-dataflow-sql-injection
+   Data Flow Intro, SQL Injection, C
+
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     add_path(
+         "c-start--100",
+         "c-ast-100",
+         "c-df-global-100",
+         "c-goal--110",
+     )
+
+     draw(G, 'g001.svg')
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:g001.svg]]
+
+** https://github.com/advanced-security/codeql-workshops-staging/blob/master/cpp/introduction/session-3/codeql-workshop-cpp-global-data-flow.md
+
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     Gt = nx.DiGraph()
+
+     add_path(
+         "c-start--110",
+         "c-ast-100",
+         "c-df-local-100",
+         "c-taint-local-100",
+         "c-taint-global-100",
+         "c-lib-security-100",
+         "c-df-global-100",
+         "c-goal--120",
+     )
+
+     draw(Gt, "g010.svg")
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:g010.svg]]
+
+   LDF-103: Dataflow I
+
+** https://github.com/advanced-security/codeql-workshops-staging/tree/master/cpp/introduction/session-2
+
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     Gt = nx.DiGraph()
+
+     add_path(
+         "c-start--120",
+         "c-ast-100",
+         "c-df-local-100",
+         "c-taint-local-100",
+         "c-goal--130",
+     )
+
+     # Set defaults
+     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
+     Gt.graph['node']={'shape':'rect', 'fontsize':12}
+     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+
+     draw(Gt, "g020.svg")
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:g020.svg]]
+
+** https://github.com/hohn/codeql-dataflow-i-cpp
+   LDF-103: Dataflow I
+
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     Gt = nx.DiGraph()
+
+     add_path(
+         "c-start--130",
+         "c-ast-100",
+         "c-df-local-100",
+         "c-taint-local-100",
+         "c-lib-format-100",
+         "c-df-global-100",
+         "c-goal--140",
+     )
+
+     # Set defaults
+     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
+     Gt.graph['node']={'shape':'rect', 'fontsize':12}
+     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+
+     draw(Gt, "g030.svg")
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:g030.svg]]
+
+** https://github.com/advanced-security/codeql-workshops-staging/blob/master/java/codeql-java-workshop-sqlinjection.md
+
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     Gt = nx.DiGraph()
+
+     add_path(
+         "java-start--100",
+         "java-ast-100",
+         "java-df-local-100",
+         "java-df-global-100",
+         "java-goal--110",
+     )
+
+     # Set defaults
+     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
+     Gt.graph['node']={'shape':'rect', 'fontsize':12}
+     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+
+     draw(Gt, "jg010.svg")
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:jg010.svg]]
+
+** Together
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     G2 = G.copy()
+     nodes = G2.nodes()
+     for nd in nodes:
+         if "-start-" in nd:
+             nodes[nd]['shape'] = 'invhouse'
+         if "-goal-" in nd:
+             nodes[nd]['shape'] = 'house'
+
+     draw(G2, "gall.svg")
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:]]
+
+** codeql-workshop-runtime-values-c
+   Reasoning about runtime values C/C++
+   https://github.com/kraiouchkine/codeql-workshop-runtime-values-c
+  
+   # cd ~/local
+   # git clone git@github.com:hohn/codeql-workshop-runtime-values-c.git
+   # cd /Users/hohn/local/codeql-workshop-runtime-values-c
+
+** https://github.com/kraiouchkine/codeql-workshop-runtime-values-c
+
+   LDF-204: Reasoning about Runtime Values
+   - Modules in this workshop:
+     - Global Value Numbering
+     - Range Analysis
+     - HashCons
+
+** fork: https://github.com/hohn/codeql-workshop-runtime-values-c
+   LDF-204: Reasoning about Runtime Values
+   - Modules in this workshop:
+     - Global Value Numbering
+     - Range Analysis
+     - HashCons
+
+** https://github.com/kraiouchkine/codeql-workshop-dangling-pointers-c
+** fork: https://github.com/hohn/codeql-workshop-dangling-pointers-c
+** https://github.com/kraiouchkine/codeql-workshop-dataflow-c
+   Workshop Title: LDF-203: Dataflow II
+
+   - Modules in this workshop:
+     - Customizing the Dataflow Graph,
+     - Barrier Guards,
+     - Combining Dataflow and Control Flow
+
+** https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver
+   Workshop Title: LDF-203: Dataflow II
+   - Modules in this workshop:
+     - Customizing the Dataflow Graph,
+     - Barrier Guards,
+     - Combining Dataflow and Control Flow
+
+   
+   A user-controlled size argument can lead to a buffer overflow.
+   https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver
+
+   although that's more experimental
+
+** https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp/tree/main/queries
+** https://github.com/knewbury01/codeql-workshop-integer-conversion.git
+** fork: https://github.com/hohn/codeql-workshop-integer-conversion.git
+    
+** GHAS config
+   https://github.com/knewbury01/WebGoat
+   https://github.com/knewbury01/log4j-shell-poc
+** codeql-workshop-nekohtml                                          :java:
+   https://github.com/knewbury01/codeql-workshop-nekohtml
+** CLI / VS Code                                                        :IDE:
+   - https://github.com/knewbury01/codeql-cli-vscode-setup
+   - original: https://github.com/hohn/codeql-cli-vscode-setup
+
+** Vulnerable Linux Driver                           :advanced:special_topic:
+   A user-controlled size argument can lead to a buffer overflow.
+   https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver
+
+** Sample Project Layout                                      :cli:project:
+   - https://gist.github.com/hohn/e86d691100e84e6f9a7e96162e0f3c42 (simple and
+     intermediate) and
+   - https://github.com/rvermeulen/codeql-example-project-layout (comprehensive)
+     are starting points and have been used in various projects
+
+** https://github.com/rvermeulen/codeql-workshop-points-to-java        :java:
+   To be refined...
+
+   Elements of Syntactical Program Analysis for Java
+
+** CodeQL workshop for Java: Finding a SQL injection  :java:sql:cve:advanced:
+   https://github.com/rvermeulen/codeql-workshop-cve-2021-21380 
+
+** https://github.com/hohn/codeql-java-workshop-sqlinjection-owasp :java:sql:
+   
+** CodeQL cve 2022 35737                                         :C:cve:custom:
+   https://github.com/rvermeulen/codeql-cve-2022-35737
+
+** https://github.com/rvermeulen/apache-struts-cve-2017-9805 :java:cve:custom:
+
+** Pack vs. Bundles                                       :admin:integration:
+   - bundles include packs and library -- just like the public ones.
+   - https://github.com/advanced-security-demo/codeql-bundle-demo/releases/tag/codeql-bundle-20221211
+   - https://github.com/advanced-security-demo/codeql-bundle-demo/actions/workflows/bundle.yaml
+
+** https://github.com/hohn/codeql-cli-end-to-end :CLI:bundle:admin:integration:
+** https://github.com/rvermeulen/codeql-bundle                     :bundle:
+    
+** https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp
+
+** https://github.com/hohn/codeql-dataflow-ii-java
+
+** codeql workshop elements of syntactical program analysis cpp
+   https://github.com/rvermeulen/codeql-workshop-elements-of-syntactical-program-analysis-cpp
+
+** https://github.com/rvermeulen/codeql-workshop-introduction-to-javascript :javascript:
+
+   CodeQL: introduction to javascript.  Old workshop, originally written by @hohn,
+   now revised.
+
+** codeql workshop control flow java
+   https://github.com/rvermeulen/codeql-workshop-control-flow-java
+
+** https://github.com/rvermeulen/codeql-workshop-dataflow-2-java
+
+** codeql workshop control flow cpp                    :cpp:control_flow:1:
+   https://github.com/hohn/codeql-workshop-control-flow-cpp
+   https://github.com/rvermeulen/codeql-workshop-control-flow-cpp
+
+** SQL injection example cpp simple
+   https://github.com/hohn/codeql-dataflow-sql-injection
+
+** together
+   #+BEGIN_SRC python
+     lp1 = list(nx.all_simple_paths(G, "l-090", "l-190")),
+     lp1
+
+     G2 = G.copy()
+     nv2 = G2.nodes(),
+     for p0 in lp1:,
+         for n0 in p0:,
+             nv2[n0]['fillcolor'] = 'lightblue',
+             nv2[n0]['style'] = 'filled',
+     G3 = nx.relabel_nodes(G2, r0),
+
+     draw(G3)
+   #+END_SRC
+
+#+HTML: </div> 

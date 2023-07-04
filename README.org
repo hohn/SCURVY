@@ -2,16 +2,45 @@
 #+OPTIONS: H:3 num:t \n:nil @:t ::t |:t ^:{} f:t *:t TeX:t LaTeX:t skip:nil p:nil
 #+OPTIONS: org-confirm-babel-evaluate:nil
 
-* Intro to SCURVY
-  SCURVY is the 
-  - summary of
-  - currently 
-  - viable
-  - delivery options
+UNDER CONSTRUCTION!!
 
-  It uses https://networkx.org for graph manipulation, graphviz for drawing.
+* SCURVY Introduction and Purpose
+  SCURVY is the 
+  - Summary of
+  - CUrrently 
+  - Viable
+  - deliverY options
+  for CodeQL workshops.
+
+  The name pays homage to great acronyms like [[https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique][PERT]] and [[https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar][FBAR]] that make dry subjects
+  more memorable.
+
+  Using a [[file:notes/existing.org::*Existing workshops in single large repository][single, large repository]] for CodeQL workshops has numerous drawbacks
+  making it impractical in actual use.
+
+  The one benefit it provides, a table of contents, can easily be provided for the
+  collection of [[file:notes/existing.org::*Existing workshops in separate repositories][workshops that exist separately]].
+
+  This project is such a table of contents.  It also provides a higher-level view
+  of
+  - how workshops fit together
+  - how to set goals
+  - what parts of CodeQL are relevant to different audiences.
+
+* Using this project
+  On your desktop
+  1. Clone this repository *or* download it as zip file.
+  2. Open toc/index.html
+  3. Browse.
+
+  *or* online
+  https://htmlpreview.github.io/?https://github.com/hohn/SCURVY/blob/master/notes/existing.html
 
 * Development Setup
+  SCURVY uses https://networkx.org for graph manipulation, graphviz for drawing,
+  and emacs for literate programming and document generation; it may use
+  https://pyexpander.sourceforge.io/introduction.html in the future.
+
   First, install conda.  Then, use the following Python setup on mac as example.
   Adjust as needed for your platform.
   #+BEGIN_SRC sh
@@ -27,6 +56,13 @@
     pip install pertdist networkx
   #+END_SRC
 
+  "Install" for local development:
+  #+BEGIN_SRC sh
+    conda activate ~/work-gh/scurvy/mac/arm64/scurvy
+    cd ~/work-gh/scurvy
+    pip install -e .
+  #+END_SRC
+
   To work in jupyter notebook:
   #+BEGIN_SRC sh
     conda activate ~/work-gh/scurvy/mac/arm64/scurvy
@@ -34,7 +70,18 @@
     jupyter notebook&
   #+END_SRC
 
+  To work with the emacs org-mode documents requires some setup beyonds emacs.
+  Follow [[https://sqrtminusone.xyz/posts/2021-05-01-org-python/]] for details.  In
+  summary:
+
   Some docs:
   - https://pygraphviz.github.io
   - https://networkx.org/documentation/latest/reference/readwrite/gml.html
   - https://networkx.org/documentation/latest/reference/drawing.html
+
+* TODO SCURVY: basics
+  - [ ] existing mapping
+  - [ ] pre-commit rendering hook
+  - [ ] rendering pipeline
+  - [ ] 
+  
