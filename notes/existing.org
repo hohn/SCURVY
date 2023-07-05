@@ -107,10 +107,17 @@
    Data Flow Intro, SQL Injection, C
 
    #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     add_prereqs(
+         "c-start-100",
+     )
+
      add_path(
          "c-start-100",
          "c-ast-100",
          "c-df-global-100",
+         "cli-build-100",
+         "cli-build-300",
+         "cli-sarif-300",
          "c-goal-110",
      )
 
@@ -125,11 +132,15 @@
    #+BEGIN_SRC python :results file :session main :exports both :python ipython
      Gt = nx.DiGraph()
 
-     add_path(
+     add_prereqs(
          "c-start-110",
          "c-ast-100",
          "c-df-local-100",
          "c-taint-local-100",
+     )
+
+     add_path(
+         "c-start-110",
          "c-taint-global-100",
          "c-lib-security-100",
          "c-df-global-100",
@@ -149,9 +160,13 @@
    #+BEGIN_SRC python :results file :session main :exports both :python ipython
      Gt = nx.DiGraph()
 
-     add_path(
+     add_prereqs(
          "c-start-120",
          "c-ast-100",
+     )
+
+     add_path(
+         "c-start-120",
          "c-df-local-100",
          "c-taint-local-100",
          "c-goal-120",
@@ -168,37 +183,53 @@
    #+RESULTS:
    [[file:g020.svg]]
 
-** https://github.com/hohn/codeql-dataflow-i-cpp
-   LDF-103: Dataflow I
+# ** https://github.com/hohn/codeql-dataflow-i-cpp
+#    LDF-103: Dataflow I
 
-   #+BEGIN_SRC python :results file :session main :exports both :python ipython
-     Gt = nx.DiGraph()
+#    This workshop will provide:
 
-     add_path(
-         "c-start-130",
-         "c-ast-100",
-         "c-df-local-100",
-         "c-taint-local-100",
-         "c-lib-format-100",
-         "c-df-global-100",
-         "c-goal-130",
-     )
+#    - Further experience writing real world queries
+#    - Exploration of local data flow
+#    - Exploration of local taint tracking
+#    - Exploration of global data flow   
 
-     # Set defaults
-     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
-     Gt.graph['node']={'shape':'rect', 'fontsize':12}
-     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+#    #+BEGIN_SRC python :results file :session main :exports both :python ipython
+#      Gt = nx.DiGraph()
 
-     draw(Gt, "g030.svg")
-   #+END_SRC
+#      add_prereqs(
+#          "c-start-130",
 
-   #+RESULTS:
-   [[file:g030.svg]]
+#      )
+
+#      add_path(
+#          "c-start-130",
+#          "c-ast-100",
+#          "c-df-local-100",
+#          "c-taint-local-100",
+#          "c-lib-format-100",
+#          "c-df-global-100",
+#          "c-goal-130",
+#      )
+
+#      # Set defaults
+#      Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
+#      Gt.graph['node']={'shape':'rect', 'fontsize':12}
+#      Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+
+#      draw(Gt, "g030.svg")
+#    #+END_SRC
+
+#    #+RESULTS:
+#    [[file:g030.svg]]
 
 ** https://github.com/advanced-security/codeql-workshops-staging/blob/master/java/codeql-java-workshop-sqlinjection.md
 
    #+BEGIN_SRC python :results file :session main :exports both :python ipython
      Gt = nx.DiGraph()
+
+     add_prereqs(
+         "java-start-100",
+     )
 
      add_path(
          "java-start-100",
@@ -218,23 +249,6 @@
 
    #+RESULTS:
    [[file:jg010.svg]]
-
-** Together
-   #+BEGIN_SRC python :results file :session main :exports both :python ipython
-     G2 = G.copy()
-     nodes = G2.nodes()
-     for nd in nodes:
-         if "-start-" in nd:
-             nodes[nd]['shape'] = 'invhouse'
-         if "-goal-" in nd:
-             nodes[nd]['shape'] = 'house'
-
-     draw(G2, "gall.svg")
-   #+END_SRC
-
-   #+RESULTS:
-   [[file:]]
-
 
 ** https://github.com/rvermeulen/codeql-workshop-control-flow-cpp
 
@@ -256,6 +270,12 @@
    
    #+BEGIN_SRC python :results file :session main :exports both :python ipython
      Gt = nx.DiGraph()
+
+     add_prereqs(
+         "c-start-140",
+         "c-df-global-100",
+         "c-df-local-100",
+     )
 
      add_path(
          "c-start-140",
@@ -295,6 +315,10 @@
    #+BEGIN_SRC python :results file :session main :exports both :python ipython
      Gt = nx.DiGraph()
 
+     add_prereqs(
+         "c-start-150",
+     )
+
      add_path(
          "c-start-150",
          "ql-modules-100",
@@ -319,12 +343,16 @@
    #+BEGIN_SRC python :results file :session main :exports both :python ipython
      Gt = nx.DiGraph()
 
+     add_prereqs(
+         "c-start-160",
+         "c-df-global-100",
+         "c-df-100",
+     )
+
      add_path(
          "c-start-160",
-         "c-df-100",
          "c-guards-300",
          "ql-modules-100",
-         "c-df-global-100",
          "c-df-partial_path_graph-300",
          "c-goal-160",
      )
@@ -405,6 +433,23 @@
 
    #+RESULTS:
    [[file:cg170.svg]]
+
+** Together
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     G2 = G.copy()
+     nodes = G2.nodes()
+     for nd in nodes:
+         if "-start-" in nd:
+             nodes[nd]['shape'] = 'invhouse'
+         if "-goal-" in nd:
+             nodes[nd]['shape'] = 'house'
+
+     draw(G2, "gall.svg")
+     
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:gall.svg]]
 
 ** https://github.com/kraiouchkine/codeql-workshop-runtime-values-c
 
