@@ -461,6 +461,43 @@
      - Range Analysis
      - HashCons
 
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     Gt = nx.DiGraph()
+
+     add_prereqs(
+         "c-start-380",
+         "c-ast-100",
+         "c-df-100",
+         "ql-exists-100",
+         "ql-predicates-100",
+         "ql-classes-100",
+         "c-cfg-100",
+         "c-df-global-100", 
+     )
+
+     add_path(
+         "c-start-380",
+         "ql-casts-100",
+         "ql-named_select-100",
+         "c-guards-300",
+         "c-lib-SimpleRangeAnalysis-300",
+         "c-lib-GlobalValueNumbering-300",
+         "c-lib-HashCons-300",
+         "c-types-300",
+         "c-goal-380",
+     )
+
+     # Set defaults
+     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
+     Gt.graph['node']={'shape':'rect', 'fontsize':12}
+     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+
+     draw(Gt, "cg380.svg")
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:cg380.svg]]
+
 ** fork: https://github.com/hohn/codeql-workshop-runtime-values-c
    LDF-204: Reasoning about Runtime Values
    - Modules in this workshop:
@@ -468,9 +505,41 @@
      - Range Analysis
      - HashCons
 
-
 ** https://github.com/kraiouchkine/codeql-workshop-dangling-pointers-c
+
 ** fork: https://github.com/hohn/codeql-workshop-dangling-pointers-c
+
+
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     Gt = nx.DiGraph()
+
+     add_prereqs(
+         "c-start-390",
+         "c-ast-100",
+         "ql-predicates-100",
+         "ql-classes-100",
+         "ql-exists-100",
+     )
+
+     add_path(
+         "c-start-390",
+         "ql-adts-300",
+         "c-ast-200",
+         "ql-adt_subclasses-300",
+         "ql-predicates-300",
+         "c-goal-390",
+     )
+
+     # Set defaults
+     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
+     Gt.graph['node']={'shape':'rect', 'fontsize':12}
+     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+
+     draw(Gt, "cg390.svg")
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:cg390.svg]]
 
 ** https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver
    Workshop Title: LDF-203: Dataflow II
@@ -481,7 +550,41 @@
 
    A user-controlled size argument can lead to a buffer overflow.
 
-   Although that's more experimental
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     Gt = nx.DiGraph()
+
+     add_prereqs(
+         "c-start-400",
+         "c-ast-100",
+         "c-df-global-100",
+         "c-df-local-100",
+         "ql-casts-100",
+         "ql-modules-100",
+         "ql-predicates-100",
+         "ql-classes-100",
+         "ql-exists-100",
+     )
+
+     add_path(
+         "c-start-400",
+         "c-df-global-200",
+         "ql-modules-200",
+         "ql-star-200",
+         "ql-plus-200",
+         "c-guards-290",
+         "c-goal-400",
+     )
+
+     # Set defaults
+     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
+     Gt.graph['node']={'shape':'rect', 'fontsize':12}
+     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+
+     draw(Gt, "cg400.svg")
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:cg400.svg]]
 
 ** https://github.com/knewbury01/codeql-workshop-integer-conversion.git
 
