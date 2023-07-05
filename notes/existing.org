@@ -27,6 +27,8 @@
 
    First identify the learning paths, then their (common?) components. 
 
+** TODO Use vs. learning
+   Some modules are prerequisites for a workshop, so they are /used/ but /not taught/.
 ** Common
    #+BEGIN_SRC python :results value pp :session main :exports both :python ipython
      import networkx as nx
@@ -65,6 +67,14 @@
          G.add_node(path[ndi+1])
          colnum += 1
 
+     def add_prereqs(item, *prereqs):
+         global colnum
+         for ndi in range(0, len(prereqs)):
+             Gt.add_node(prereqs[ndi])
+             Gt.add_edge(prereqs[ndi], item, color=sc.colors2[colnum])
+             G.add_node(prereqs[ndi])
+             G.add_edge(prereqs[ndi], item, color=sc.colors2[colnum])
+
      def draw(graph, filename):
          svg = nx.nx_agraph.to_agraph(graph).draw(prog='dot', format='svg')
          with open(filename, 'wb') as f:
@@ -72,12 +82,19 @@
              f.write(svg)
          return(filename)
 
+     # add_prereqs(
+     #     "test-start-100",
+     #     "test-pre-99",
+     #     "test-pre-89",
+     # )
+
      # add_path(
      #     "test-start-100",
      #     "test-a-100",
      #     "test-b-100",
-     #     "test-goal-110",
+     #     "test-goal-100",
      # )
+
      # draw(G, 'g001.svg')
 
      'ok'
@@ -85,7 +102,6 @@
 
    #+RESULTS:
    : 'ok'
-
 
 ** https://github.com/hohn/codeql-dataflow-sql-injection
    Data Flow Intro, SQL Injection, C
@@ -331,6 +347,64 @@
      - Customizing the Dataflow Graph,
      - Barrier Guards,
      - Combining Dataflow and Control Flow
+
+   This workshop consists of the following three parts, which can be followed in
+   sequence or individually:
+
+   - Basic control-flow and data-flow analysis using local and global data-flow to
+     identify flow from input parameters to unvalidated use. (Beginner)
+   - Identifying mismatched type validation, debugging data-flow by using partial
+     flow analysis, and adding missing flow steps. (Intermediate)
+   - Further improving the query by using flow-state and runtime value
+     analysis. (Advanced, WIP)
+
+   Understanding
+   1. basic syntactic program analysis and
+   2. control-flow analysis
+   is a prerequisite to this workshop. If you are not familiar with these
+   concepts, we recommend that you complete CodeQL Workshop: Syntactical Elements
+   of C/C++ and CodeQL Workshop for C/C++: Control Flow first. We recommend that
+   you are familiar with the CodeQL language, the CodeQL standard libraries, and
+   data-flow analysis at an elementary level.
+
+   [[*https://github.com/rvermeulen/codeql-workshop-elements-of-syntactical-program-analysis-cpp][https://github.com/rvermeulen/codeql-workshop-elements-of-syntactical-program-analysis-cpp]]
+   and
+   [[*https://github.com/rvermeulen/codeql-workshop-control-flow-cpp][https://github.com/rvermeulen/codeql-workshop-control-flow-cpp]]
+
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     Gt = nx.DiGraph()
+
+     add_prereqs(
+         "c-start-170",
+         "ql-modules-100",
+         "ql-classes-100",
+         "c-ast-100",
+         "c-cfg-100",
+         "ql-recursion-100",
+         "ql-dominators-100",
+         "ql-choices-100",
+
+         "ql-predicates-100",
+         "c-df-100",
+         "c-df-global-100", 
+     )
+
+     add_path(
+         "c-start-170",
+         "c-guards-300",
+         "c-goal-170",
+     )
+
+     # Set defaults
+     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
+     Gt.graph['node']={'shape':'rect', 'fontsize':12}
+     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+
+     draw(Gt, "cg170.svg")
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:cg170.svg]]
 
 ** https://github.com/kraiouchkine/codeql-workshop-runtime-values-c
 
