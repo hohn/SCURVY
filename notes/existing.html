@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-04 Tue 12:46 -->
+<!-- 2023-07-04 Tue 23:04 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -202,49 +202,45 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org83f8cdd">1. Existing workshops in single large repository</a></li>
-<li><a href="#orge5409b8">2. Existing workshops in separate repositories</a>
+<li><a href="#org92515be">1. Existing workshops in single large repository</a></li>
+<li><a href="#org2123780">2. Existing workshops in separate repositories</a>
 <ul>
-<li><a href="#orgcdd65e9">2.1. <span class="todo TODO">TODO</span> SCURVY: Untangle this</a></li>
-<li><a href="#orgb888be5">2.2. Common</a></li>
-<li><a href="#orgbb2c1ce">2.3. https://github.com/hohn/codeql-dataflow-sql-injection</a></li>
-<li><a href="#orgb83d88c">2.4. https://github.com/advanced-security/codeql-workshops-staging/blob/master/cpp/introduction/session-3/codeql-workshop-cpp-global-data-flow.md</a></li>
-<li><a href="#org26e8a03">2.5. https://github.com/advanced-security/codeql-workshops-staging/tree/master/cpp/introduction/session-2</a></li>
-<li><a href="#orgf3f9be3">2.6. https://github.com/hohn/codeql-dataflow-i-cpp</a></li>
-<li><a href="#orgf66b7cb">2.7. https://github.com/advanced-security/codeql-workshops-staging/blob/master/java/codeql-java-workshop-sqlinjection.md</a></li>
-<li><a href="#org24c1fbb">2.8. Together</a></li>
-<li><a href="#orgafe647e">2.9. codeql-workshop-runtime-values-c</a></li>
-<li><a href="#org5f78c7d">2.10. https://github.com/kraiouchkine/codeql-workshop-runtime-values-c</a></li>
-<li><a href="#org9a35f4c">2.11. fork: https://github.com/hohn/codeql-workshop-runtime-values-c</a></li>
-<li><a href="#org48b3983">2.12. https://github.com/kraiouchkine/codeql-workshop-dangling-pointers-c</a></li>
-<li><a href="#orgb04a968">2.13. fork: https://github.com/hohn/codeql-workshop-dangling-pointers-c</a></li>
-<li><a href="#org79cb95a">2.14. https://github.com/kraiouchkine/codeql-workshop-dataflow-c</a></li>
-<li><a href="#orgbc1b94d">2.15. https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver</a></li>
-<li><a href="#orgaafeab7">2.16. https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp/tree/main/queries</a></li>
-<li><a href="#orga88300c">2.17. https://github.com/knewbury01/codeql-workshop-integer-conversion.git</a></li>
-<li><a href="#orgc0eaacd">2.18. fork: https://github.com/hohn/codeql-workshop-integer-conversion.git</a></li>
-<li><a href="#org702302c">2.19. GHAS config</a></li>
-<li><a href="#orgcc65954">2.20. codeql-workshop-nekohtml&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span></span></a></li>
-<li><a href="#orgc951f20">2.21. CLI / VS Code&#xa0;&#xa0;&#xa0;<span class="tag"><span class="IDE">IDE</span></span></a></li>
-<li><a href="#org76bc7f7">2.22. Vulnerable Linux Driver&#xa0;&#xa0;&#xa0;<span class="tag"><span class="advanced">advanced</span>&#xa0;<span class="special_topic">special_topic</span></span></a></li>
-<li><a href="#orgcf9fdf5">2.23. Sample Project Layout&#xa0;&#xa0;&#xa0;<span class="tag"><span class="cli">cli</span>&#xa0;<span class="project">project</span></span></a></li>
-<li><a href="#org6f462b2">2.24. https://github.com/rvermeulen/codeql-workshop-points-to-java&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span></span></a></li>
-<li><a href="#org388d1b7">2.25. CodeQL workshop for Java: Finding a SQL injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span>&#xa0;<span class="sql">sql</span>&#xa0;<span class="cve">cve</span>&#xa0;<span class="advanced">advanced</span></span></a></li>
-<li><a href="#org8a67b8d">2.26. https://github.com/hohn/codeql-java-workshop-sqlinjection-owasp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span>&#xa0;<span class="sql">sql</span></span></a></li>
-<li><a href="#org00280fc">2.27. CodeQL cve 2022 35737&#xa0;&#xa0;&#xa0;<span class="tag"><span class="C">C</span>&#xa0;<span class="cve">cve</span>&#xa0;<span class="custom">custom</span></span></a></li>
-<li><a href="#org2af05e9">2.28. https://github.com/rvermeulen/apache-struts-cve-2017-9805&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span>&#xa0;<span class="cve">cve</span>&#xa0;<span class="custom">custom</span></span></a></li>
-<li><a href="#org2898b83">2.29. Pack vs. Bundles&#xa0;&#xa0;&#xa0;<span class="tag"><span class="admin">admin</span>&#xa0;<span class="integration">integration</span></span></a></li>
-<li><a href="#org61b5eca">2.30. https://github.com/hohn/codeql-cli-end-to-end&#xa0;&#xa0;&#xa0;<span class="tag"><span class="CLI">CLI</span>&#xa0;<span class="bundle">bundle</span>&#xa0;<span class="admin">admin</span>&#xa0;<span class="integration">integration</span></span></a></li>
-<li><a href="#org9ea7a93">2.31. https://github.com/rvermeulen/codeql-bundle&#xa0;&#xa0;&#xa0;<span class="tag"><span class="bundle">bundle</span></span></a></li>
-<li><a href="#org2e0e6e5">2.32. https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp</a></li>
-<li><a href="#orgcc6aab4">2.33. https://github.com/hohn/codeql-dataflow-ii-java</a></li>
-<li><a href="#org608cf41">2.34. codeql workshop elements of syntactical program analysis cpp</a></li>
-<li><a href="#orgcfc467f">2.35. https://github.com/rvermeulen/codeql-workshop-introduction-to-javascript&#xa0;&#xa0;&#xa0;<span class="tag"><span class="javascript">javascript</span></span></a></li>
-<li><a href="#org5ac7cfb">2.36. codeql workshop control flow java</a></li>
-<li><a href="#org5d7b756">2.37. https://github.com/rvermeulen/codeql-workshop-dataflow-2-java</a></li>
-<li><a href="#org4bd51f4">2.38. codeql workshop control flow cpp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="cpp">cpp</span>&#xa0;<span class="control_flow">control_flow</span>&#xa0;<span class="1">1</span></span></a></li>
-<li><a href="#org702ce86">2.39. SQL injection example cpp simple</a></li>
-<li><a href="#orgecb2fed">2.40. together</a></li>
+<li><a href="#org544e866">2.1. <span class="todo TODO">TODO</span> SCURVY: Untangle this</a></li>
+<li><a href="#orge2fd9ea">2.2. Common</a></li>
+<li><a href="#orgb9b6425">2.3. https://github.com/hohn/codeql-dataflow-sql-injection</a></li>
+<li><a href="#org3488270">2.4. https://github.com/advanced-security/codeql-workshops-staging/blob/master/cpp/introduction/session-3/codeql-workshop-cpp-global-data-flow.md</a></li>
+<li><a href="#org650e090">2.5. https://github.com/advanced-security/codeql-workshops-staging/tree/master/cpp/introduction/session-2</a></li>
+<li><a href="#org0d97cf9">2.6. https://github.com/hohn/codeql-dataflow-i-cpp</a></li>
+<li><a href="#org2c27182">2.7. https://github.com/advanced-security/codeql-workshops-staging/blob/master/java/codeql-java-workshop-sqlinjection.md</a></li>
+<li><a href="#orgc54ebd3">2.8. Together</a></li>
+<li><a href="#org56faf4a">2.9. codeql workshop control flow cpp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="cpp">cpp</span>&#xa0;<span class="control_flow">control_flow</span>&#xa0;<span class="1">1</span></span></a></li>
+<li><a href="#orge282619">2.10. https://github.com/rvermeulen/codeql-workshop-elements-of-syntactical-program-analysis-cpp</a></li>
+<li><a href="#orgfb6c5e1">2.11. https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp</a></li>
+<li><a href="#orgcbab956">2.12. https://github.com/kraiouchkine/codeql-workshop-dataflow-c</a></li>
+<li><a href="#orgd642502">2.13. https://github.com/kraiouchkine/codeql-workshop-runtime-values-c</a></li>
+<li><a href="#orga04ec82">2.14. fork: https://github.com/hohn/codeql-workshop-runtime-values-c</a></li>
+<li><a href="#org9b668e2">2.15. https://github.com/kraiouchkine/codeql-workshop-dangling-pointers-c</a></li>
+<li><a href="#org062c780">2.16. fork: https://github.com/hohn/codeql-workshop-dangling-pointers-c</a></li>
+<li><a href="#orgba25f19">2.17. https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver</a></li>
+<li><a href="#orge7e1831">2.18. https://github.com/knewbury01/codeql-workshop-integer-conversion.git</a></li>
+<li><a href="#orgc484f48">2.19. fork: https://github.com/hohn/codeql-workshop-integer-conversion.git</a></li>
+<li><a href="#orgee0b0d4">2.20. GHAS config</a></li>
+<li><a href="#org0c30b74">2.21. CLI / VS Code&#xa0;&#xa0;&#xa0;<span class="tag"><span class="IDE">IDE</span></span></a></li>
+<li><a href="#orge48c521">2.22. Sample Project Layout&#xa0;&#xa0;&#xa0;<span class="tag"><span class="cli">cli</span>&#xa0;<span class="project">project</span></span></a></li>
+<li><a href="#org0fb3bff">2.23. Pack vs. Bundles&#xa0;&#xa0;&#xa0;<span class="tag"><span class="admin">admin</span>&#xa0;<span class="integration">integration</span></span></a></li>
+<li><a href="#org51ff67c">2.24. https://github.com/hohn/codeql-cli-end-to-end&#xa0;&#xa0;&#xa0;<span class="tag"><span class="CLI">CLI</span>&#xa0;<span class="bundle">bundle</span>&#xa0;<span class="admin">admin</span>&#xa0;<span class="integration">integration</span></span></a></li>
+<li><a href="#org77456ff">2.25. https://github.com/rvermeulen/codeql-bundle&#xa0;&#xa0;&#xa0;<span class="tag"><span class="bundle">bundle</span></span></a></li>
+<li><a href="#org9db912d">2.26. https://github.com/knewbury01/codeql-workshop-nekohtml&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span></span></a></li>
+<li><a href="#orgcf6ca61">2.27. https://github.com/rvermeulen/codeql-workshop-points-to-java&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span></span></a></li>
+<li><a href="#orgb227959">2.28. CodeQL workshop for Java: Finding a SQL injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span>&#xa0;<span class="sql">sql</span>&#xa0;<span class="cve">cve</span>&#xa0;<span class="advanced">advanced</span></span></a></li>
+<li><a href="#orga9270ae">2.29. https://github.com/hohn/codeql-java-workshop-sqlinjection-owasp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span>&#xa0;<span class="sql">sql</span></span></a></li>
+<li><a href="#org4ff14ad">2.30. Vulnerable Linux Driver&#xa0;&#xa0;&#xa0;<span class="tag"><span class="advanced">advanced</span>&#xa0;<span class="special_topic">special_topic</span></span></a></li>
+<li><a href="#org7355ed2">2.31. CodeQL cve 2022 35737&#xa0;&#xa0;&#xa0;<span class="tag"><span class="C">C</span>&#xa0;<span class="cve">cve</span>&#xa0;<span class="custom">custom</span></span></a></li>
+<li><a href="#org1896800">2.32. https://github.com/rvermeulen/apache-struts-cve-2017-9805&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span>&#xa0;<span class="cve">cve</span>&#xa0;<span class="custom">custom</span></span></a></li>
+<li><a href="#org1087e5e">2.33. https://github.com/hohn/codeql-dataflow-ii-java</a></li>
+<li><a href="#org2b564c5">2.34. https://github.com/rvermeulen/codeql-workshop-introduction-to-javascript&#xa0;&#xa0;&#xa0;<span class="tag"><span class="javascript">javascript</span></span></a></li>
+<li><a href="#orgfedbad2">2.35. codeql workshop control flow java</a></li>
+<li><a href="#orgf687bca">2.36. https://github.com/rvermeulen/codeql-workshop-dataflow-2-java</a></li>
 </ul>
 </li>
 </ul>
@@ -254,8 +250,8 @@
 
 <div id="org-content">
 
-<div id="outline-container-org83f8cdd" class="outline-2">
-<h2 id="org83f8cdd"><span class="section-number-2">1.</span> Existing workshops in single large repository</h2>
+<div id="outline-container-org92515be" class="outline-2">
+<h2 id="org92515be"><span class="section-number-2">1.</span> Existing workshops in single large repository</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The repository <a href="https://github.com/advanced-security/codeql-workshops-staging">https://github.com/advanced-security/codeql-workshops-staging</a> has
@@ -265,12 +261,12 @@ better usability.
 </div>
 </div>
 
-<div id="outline-container-orge5409b8" class="outline-2">
-<h2 id="orge5409b8"><span class="section-number-2">2.</span> Existing workshops in separate repositories</h2>
+<div id="outline-container-org2123780" class="outline-2">
+<h2 id="org2123780"><span class="section-number-2">2.</span> Existing workshops in separate repositories</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgcdd65e9" class="outline-3">
-<h3 id="orgcdd65e9"><span class="section-number-3">2.1.</span> <span class="todo TODO">TODO</span> SCURVY: Untangle this</h3>
+<div id="outline-container-org544e866" class="outline-3">
+<h3 id="org544e866"><span class="section-number-3">2.1.</span> <span class="todo TODO">TODO</span> SCURVY: Untangle this</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> This is mixing actual workshops that are based on learning objectives
@@ -284,8 +280,8 @@ First identify the learning paths, then their (common?) components.
 </div>
 </div>
 
-<div id="outline-container-orgb888be5" class="outline-3">
-<h3 id="orgb888be5"><span class="section-number-3">2.2.</span> Common</h3>
+<div id="outline-container-orge2fd9ea" class="outline-3">
+<h3 id="orge2fd9ea"><span class="section-number-3">2.2.</span> Common</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #a020f0;">import</span> networkx <span style="color: #a020f0;">as</span> nx
@@ -350,8 +346,8 @@ G.<span style="color: #a0522d;">graph</span>[<span style="color: #8b2252;">'edge
 </div>
 
 
-<div id="outline-container-orgbb2c1ce" class="outline-3">
-<h3 id="orgbb2c1ce"><span class="section-number-3">2.3.</span> <a href="https://github.com/hohn/codeql-dataflow-sql-injection">https://github.com/hohn/codeql-dataflow-sql-injection</a></h3>
+<div id="outline-container-orgb9b6425" class="outline-3">
+<h3 id="orgb9b6425"><span class="section-number-3">2.3.</span> <a href="https://github.com/hohn/codeql-dataflow-sql-injection">https://github.com/hohn/codeql-dataflow-sql-injection</a></h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Data Flow Intro, SQL Injection, C
@@ -370,15 +366,15 @@ draw(G, <span style="color: #8b2252;">'g001.svg'</span>)
 </div>
 
 
-<div id="orgf752584" class="figure">
+<div id="org3e8f9a2" class="figure">
 <p><img src="g001.svg" alt="g001.svg" class="org-svg" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgb83d88c" class="outline-3">
-<h3 id="orgb83d88c"><span class="section-number-3">2.4.</span> <a href="https://github.com/advanced-security/codeql-workshops-staging/blob/master/cpp/introduction/session-3/codeql-workshop-cpp-global-data-flow.md">https://github.com/advanced-security/codeql-workshops-staging/blob/master/cpp/introduction/session-3/codeql-workshop-cpp-global-data-flow.md</a></h3>
+<div id="outline-container-org3488270" class="outline-3">
+<h3 id="org3488270"><span class="section-number-3">2.4.</span> <a href="https://github.com/advanced-security/codeql-workshops-staging/blob/master/cpp/introduction/session-3/codeql-workshop-cpp-global-data-flow.md">https://github.com/advanced-security/codeql-workshops-staging/blob/master/cpp/introduction/session-3/codeql-workshop-cpp-global-data-flow.md</a></h3>
 <div class="outline-text-3" id="text-2-4">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #a0522d;">Gt</span> = nx.DiGraph()
@@ -399,7 +395,7 @@ draw(Gt, <span style="color: #8b2252;">"g010.svg"</span>)
 </div>
 
 
-<div id="orgde211ae" class="figure">
+<div id="org5892257" class="figure">
 <p><img src="g010.svg" alt="g010.svg" class="org-svg" />
 </p>
 </div>
@@ -410,8 +406,8 @@ LDF-103: Dataflow I
 </div>
 </div>
 
-<div id="outline-container-org26e8a03" class="outline-3">
-<h3 id="org26e8a03"><span class="section-number-3">2.5.</span> <a href="https://github.com/advanced-security/codeql-workshops-staging/tree/master/cpp/introduction/session-2">https://github.com/advanced-security/codeql-workshops-staging/tree/master/cpp/introduction/session-2</a></h3>
+<div id="outline-container-org650e090" class="outline-3">
+<h3 id="org650e090"><span class="section-number-3">2.5.</span> <a href="https://github.com/advanced-security/codeql-workshops-staging/tree/master/cpp/introduction/session-2">https://github.com/advanced-security/codeql-workshops-staging/tree/master/cpp/introduction/session-2</a></h3>
 <div class="outline-text-3" id="text-2-5">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #a0522d;">Gt</span> = nx.DiGraph()
@@ -434,15 +430,15 @@ draw(Gt, <span style="color: #8b2252;">"g020.svg"</span>)
 </div>
 
 
-<div id="org220a5ba" class="figure">
+<div id="org6a7b884" class="figure">
 <p><img src="g020.svg" alt="g020.svg" class="org-svg" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgf3f9be3" class="outline-3">
-<h3 id="orgf3f9be3"><span class="section-number-3">2.6.</span> <a href="https://github.com/hohn/codeql-dataflow-i-cpp">https://github.com/hohn/codeql-dataflow-i-cpp</a></h3>
+<div id="outline-container-org0d97cf9" class="outline-3">
+<h3 id="org0d97cf9"><span class="section-number-3">2.6.</span> <a href="https://github.com/hohn/codeql-dataflow-i-cpp">https://github.com/hohn/codeql-dataflow-i-cpp</a></h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 LDF-103: Dataflow I
@@ -471,15 +467,15 @@ draw(Gt, <span style="color: #8b2252;">"g030.svg"</span>)
 </div>
 
 
-<div id="org7f4c6c4" class="figure">
+<div id="orgddbb4e3" class="figure">
 <p><img src="g030.svg" alt="g030.svg" class="org-svg" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgf66b7cb" class="outline-3">
-<h3 id="orgf66b7cb"><span class="section-number-3">2.7.</span> <a href="https://github.com/advanced-security/codeql-workshops-staging/blob/master/java/codeql-java-workshop-sqlinjection.md">https://github.com/advanced-security/codeql-workshops-staging/blob/master/java/codeql-java-workshop-sqlinjection.md</a></h3>
+<div id="outline-container-org2c27182" class="outline-3">
+<h3 id="org2c27182"><span class="section-number-3">2.7.</span> <a href="https://github.com/advanced-security/codeql-workshops-staging/blob/master/java/codeql-java-workshop-sqlinjection.md">https://github.com/advanced-security/codeql-workshops-staging/blob/master/java/codeql-java-workshop-sqlinjection.md</a></h3>
 <div class="outline-text-3" id="text-2-7">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #a0522d;">Gt</span> = nx.DiGraph()
@@ -502,15 +498,15 @@ draw(Gt, <span style="color: #8b2252;">"jg010.svg"</span>)
 </div>
 
 
-<div id="org78ce461" class="figure">
+<div id="org8113148" class="figure">
 <p><img src="jg010.svg" alt="jg010.svg" class="org-svg" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org24c1fbb" class="outline-3">
-<h3 id="org24c1fbb"><span class="section-number-3">2.8.</span> Together</h3>
+<div id="outline-container-orgc54ebd3" class="outline-3">
+<h3 id="orgc54ebd3"><span class="section-number-3">2.8.</span> Together</h3>
 <div class="outline-text-3" id="text-2-8">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #a0522d;">G2</span> = G.copy()
@@ -526,66 +522,45 @@ draw(G2, <span style="color: #8b2252;">"gall.svg"</span>)
 </div>
 
 
-<div id="orgf74cded" class="figure">
+<div id="orgf96c6ea" class="figure">
 <p><img src="gall.svg" alt="gall.svg" class="org-svg" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgafe647e" class="outline-3">
-<h3 id="orgafe647e"><span class="section-number-3">2.9.</span> codeql-workshop-runtime-values-c</h3>
+
+<div id="outline-container-org56faf4a" class="outline-3">
+<h3 id="org56faf4a"><span class="section-number-3">2.9.</span> codeql workshop control flow cpp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="cpp">cpp</span>&#xa0;<span class="control_flow">control_flow</span>&#xa0;<span class="1">1</span></span></h3>
 <div class="outline-text-3" id="text-2-9">
 <p>
-Reasoning about runtime values C/C++
-<a href="https://github.com/kraiouchkine/codeql-workshop-runtime-values-c">https://github.com/kraiouchkine/codeql-workshop-runtime-values-c</a>
+<a href="https://github.com/hohn/codeql-workshop-control-flow-cpp">https://github.com/hohn/codeql-workshop-control-flow-cpp</a>
+<a href="https://github.com/rvermeulen/codeql-workshop-control-flow-cpp">https://github.com/rvermeulen/codeql-workshop-control-flow-cpp</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org5f78c7d" class="outline-3">
-<h3 id="org5f78c7d"><span class="section-number-3">2.10.</span> <a href="https://github.com/kraiouchkine/codeql-workshop-runtime-values-c">https://github.com/kraiouchkine/codeql-workshop-runtime-values-c</a></h3>
+<div id="outline-container-orge282619" class="outline-3">
+<h3 id="orge282619"><span class="section-number-3">2.10.</span> <a href="https://github.com/rvermeulen/codeql-workshop-elements-of-syntactical-program-analysis-cpp">https://github.com/rvermeulen/codeql-workshop-elements-of-syntactical-program-analysis-cpp</a></h3>
 <div class="outline-text-3" id="text-2-10">
 <p>
-LDF-204: Reasoning about Runtime Values
+codeql workshop elements of syntactical program analysis cpp
 </p>
-<ul class="org-ul">
-<li>Modules in this workshop:
-<ul class="org-ul">
-<li>Global Value Numbering</li>
-<li>Range Analysis</li>
-<li>HashCons</li>
-</ul></li>
-</ul>
 </div>
 </div>
 
-<div id="outline-container-org9a35f4c" class="outline-3">
-<h3 id="org9a35f4c"><span class="section-number-3">2.11.</span> fork: <a href="https://github.com/hohn/codeql-workshop-runtime-values-c">https://github.com/hohn/codeql-workshop-runtime-values-c</a></h3>
+<div id="outline-container-orgfb6c5e1" class="outline-3">
+<h3 id="orgfb6c5e1"><span class="section-number-3">2.11.</span> <a href="https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp">https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp</a></h3>
 <div class="outline-text-3" id="text-2-11">
 <p>
-LDF-204: Reasoning about Runtime Values
+<a href="https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp/tree/main/queries">https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp/tree/main/queries</a>
 </p>
-<ul class="org-ul">
-<li>Modules in this workshop:
-<ul class="org-ul">
-<li>Global Value Numbering</li>
-<li>Range Analysis</li>
-<li>HashCons</li>
-</ul></li>
-</ul>
 </div>
 </div>
 
-<div id="outline-container-org48b3983" class="outline-3">
-<h3 id="org48b3983"><span class="section-number-3">2.12.</span> <a href="https://github.com/kraiouchkine/codeql-workshop-dangling-pointers-c">https://github.com/kraiouchkine/codeql-workshop-dangling-pointers-c</a></h3>
-</div>
-<div id="outline-container-orgb04a968" class="outline-3">
-<h3 id="orgb04a968"><span class="section-number-3">2.13.</span> fork: <a href="https://github.com/hohn/codeql-workshop-dangling-pointers-c">https://github.com/hohn/codeql-workshop-dangling-pointers-c</a></h3>
-</div>
-<div id="outline-container-org79cb95a" class="outline-3">
-<h3 id="org79cb95a"><span class="section-number-3">2.14.</span> <a href="https://github.com/kraiouchkine/codeql-workshop-dataflow-c">https://github.com/kraiouchkine/codeql-workshop-dataflow-c</a></h3>
-<div class="outline-text-3" id="text-2-14">
+<div id="outline-container-orgcbab956" class="outline-3">
+<h3 id="orgcbab956"><span class="section-number-3">2.12.</span> <a href="https://github.com/kraiouchkine/codeql-workshop-dataflow-c">https://github.com/kraiouchkine/codeql-workshop-dataflow-c</a></h3>
+<div class="outline-text-3" id="text-2-12">
 <p>
 Workshop Title: LDF-203: Dataflow II
 </p>
@@ -601,9 +576,55 @@ Workshop Title: LDF-203: Dataflow II
 </div>
 </div>
 
-<div id="outline-container-orgbc1b94d" class="outline-3">
-<h3 id="orgbc1b94d"><span class="section-number-3">2.15.</span> <a href="https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver">https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver</a></h3>
-<div class="outline-text-3" id="text-2-15">
+<div id="outline-container-orgd642502" class="outline-3">
+<h3 id="orgd642502"><span class="section-number-3">2.13.</span> <a href="https://github.com/kraiouchkine/codeql-workshop-runtime-values-c">https://github.com/kraiouchkine/codeql-workshop-runtime-values-c</a></h3>
+<div class="outline-text-3" id="text-2-13">
+<p>
+Reasoning about runtime values C/C++
+</p>
+
+<p>
+LDF-204: Reasoning about Runtime Values
+</p>
+<ul class="org-ul">
+<li>Modules in this workshop:
+<ul class="org-ul">
+<li>Global Value Numbering</li>
+<li>Range Analysis</li>
+<li>HashCons</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga04ec82" class="outline-3">
+<h3 id="orga04ec82"><span class="section-number-3">2.14.</span> fork: <a href="https://github.com/hohn/codeql-workshop-runtime-values-c">https://github.com/hohn/codeql-workshop-runtime-values-c</a></h3>
+<div class="outline-text-3" id="text-2-14">
+<p>
+LDF-204: Reasoning about Runtime Values
+</p>
+<ul class="org-ul">
+<li>Modules in this workshop:
+<ul class="org-ul">
+<li>Global Value Numbering</li>
+<li>Range Analysis</li>
+<li>HashCons</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org9b668e2" class="outline-3">
+<h3 id="org9b668e2"><span class="section-number-3">2.15.</span> <a href="https://github.com/kraiouchkine/codeql-workshop-dangling-pointers-c">https://github.com/kraiouchkine/codeql-workshop-dangling-pointers-c</a></h3>
+</div>
+<div id="outline-container-org062c780" class="outline-3">
+<h3 id="org062c780"><span class="section-number-3">2.16.</span> fork: <a href="https://github.com/hohn/codeql-workshop-dangling-pointers-c">https://github.com/hohn/codeql-workshop-dangling-pointers-c</a></h3>
+</div>
+
+<div id="outline-container-orgba25f19" class="outline-3">
+<h3 id="orgba25f19"><span class="section-number-3">2.17.</span> <a href="https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver">https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver</a></h3>
+<div class="outline-text-3" id="text-2-17">
 <p>
 Workshop Title: LDF-203: Dataflow II
 </p>
@@ -628,35 +649,26 @@ although that's more experimental
 </div>
 </div>
 
-<div id="outline-container-orgaafeab7" class="outline-3">
-<h3 id="orgaafeab7"><span class="section-number-3">2.16.</span> <a href="https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp/tree/main/queries">https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp/tree/main/queries</a></h3>
-</div>
-<div id="outline-container-orga88300c" class="outline-3">
-<h3 id="orga88300c"><span class="section-number-3">2.17.</span> <a href="https://github.com/knewbury01/codeql-workshop-integer-conversion.git">https://github.com/knewbury01/codeql-workshop-integer-conversion.git</a></h3>
-</div>
-<div id="outline-container-orgc0eaacd" class="outline-3">
-<h3 id="orgc0eaacd"><span class="section-number-3">2.18.</span> fork: <a href="https://github.com/hohn/codeql-workshop-integer-conversion.git">https://github.com/hohn/codeql-workshop-integer-conversion.git</a></h3>
+<div id="outline-container-orge7e1831" class="outline-3">
+<h3 id="orge7e1831"><span class="section-number-3">2.18.</span> <a href="https://github.com/knewbury01/codeql-workshop-integer-conversion.git">https://github.com/knewbury01/codeql-workshop-integer-conversion.git</a></h3>
 </div>
 
-<div id="outline-container-org702302c" class="outline-3">
-<h3 id="org702302c"><span class="section-number-3">2.19.</span> GHAS config</h3>
-<div class="outline-text-3" id="text-2-19">
+<div id="outline-container-orgc484f48" class="outline-3">
+<h3 id="orgc484f48"><span class="section-number-3">2.19.</span> fork: <a href="https://github.com/hohn/codeql-workshop-integer-conversion.git">https://github.com/hohn/codeql-workshop-integer-conversion.git</a></h3>
+</div>
+
+<div id="outline-container-orgee0b0d4" class="outline-3">
+<h3 id="orgee0b0d4"><span class="section-number-3">2.20.</span> GHAS config</h3>
+<div class="outline-text-3" id="text-2-20">
 <p>
 <a href="https://github.com/knewbury01/WebGoat">https://github.com/knewbury01/WebGoat</a>
 <a href="https://github.com/knewbury01/log4j-shell-poc">https://github.com/knewbury01/log4j-shell-poc</a>
 </p>
 </div>
 </div>
-<div id="outline-container-orgcc65954" class="outline-3">
-<h3 id="orgcc65954"><span class="section-number-3">2.20.</span> codeql-workshop-nekohtml&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span></span></h3>
-<div class="outline-text-3" id="text-2-20">
-<p>
-<a href="https://github.com/knewbury01/codeql-workshop-nekohtml">https://github.com/knewbury01/codeql-workshop-nekohtml</a>
-</p>
-</div>
-</div>
-<div id="outline-container-orgc951f20" class="outline-3">
-<h3 id="orgc951f20"><span class="section-number-3">2.21.</span> CLI / VS Code&#xa0;&#xa0;&#xa0;<span class="tag"><span class="IDE">IDE</span></span></h3>
+
+<div id="outline-container-org0c30b74" class="outline-3">
+<h3 id="org0c30b74"><span class="section-number-3">2.21.</span> CLI / VS Code&#xa0;&#xa0;&#xa0;<span class="tag"><span class="IDE">IDE</span></span></h3>
 <div class="outline-text-3" id="text-2-21">
 <ul class="org-ul">
 <li><a href="https://github.com/knewbury01/codeql-cli-vscode-setup">https://github.com/knewbury01/codeql-cli-vscode-setup</a></li>
@@ -665,19 +677,9 @@ although that's more experimental
 </div>
 </div>
 
-<div id="outline-container-org76bc7f7" class="outline-3">
-<h3 id="org76bc7f7"><span class="section-number-3">2.22.</span> Vulnerable Linux Driver&#xa0;&#xa0;&#xa0;<span class="tag"><span class="advanced">advanced</span>&#xa0;<span class="special_topic">special_topic</span></span></h3>
+<div id="outline-container-orge48c521" class="outline-3">
+<h3 id="orge48c521"><span class="section-number-3">2.22.</span> Sample Project Layout&#xa0;&#xa0;&#xa0;<span class="tag"><span class="cli">cli</span>&#xa0;<span class="project">project</span></span></h3>
 <div class="outline-text-3" id="text-2-22">
-<p>
-A user-controlled size argument can lead to a buffer overflow.
-<a href="https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver">https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgcf9fdf5" class="outline-3">
-<h3 id="orgcf9fdf5"><span class="section-number-3">2.23.</span> Sample Project Layout&#xa0;&#xa0;&#xa0;<span class="tag"><span class="cli">cli</span>&#xa0;<span class="project">project</span></span></h3>
-<div class="outline-text-3" id="text-2-23">
 <ul class="org-ul">
 <li><a href="https://gist.github.com/hohn/e86d691100e84e6f9a7e96162e0f3c42">https://gist.github.com/hohn/e86d691100e84e6f9a7e96162e0f3c42</a> (simple and
 intermediate) and</li>
@@ -687,9 +689,33 @@ are starting points and have been used in various projects</li>
 </div>
 </div>
 
-<div id="outline-container-org6f462b2" class="outline-3">
-<h3 id="org6f462b2"><span class="section-number-3">2.24.</span> <a href="https://github.com/rvermeulen/codeql-workshop-points-to-java">https://github.com/rvermeulen/codeql-workshop-points-to-java</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span></span></h3>
-<div class="outline-text-3" id="text-2-24">
+<div id="outline-container-org0fb3bff" class="outline-3">
+<h3 id="org0fb3bff"><span class="section-number-3">2.23.</span> Pack vs. Bundles&#xa0;&#xa0;&#xa0;<span class="tag"><span class="admin">admin</span>&#xa0;<span class="integration">integration</span></span></h3>
+<div class="outline-text-3" id="text-2-23">
+<ul class="org-ul">
+<li>bundles include packs and library &#x2013; just like the public ones.</li>
+<li><a href="https://github.com/advanced-security-demo/codeql-bundle-demo/releases/tag/codeql-bundle-20221211">https://github.com/advanced-security-demo/codeql-bundle-demo/releases/tag/codeql-bundle-20221211</a></li>
+<li><a href="https://github.com/advanced-security-demo/codeql-bundle-demo/actions/workflows/bundle.yaml">https://github.com/advanced-security-demo/codeql-bundle-demo/actions/workflows/bundle.yaml</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org51ff67c" class="outline-3">
+<h3 id="org51ff67c"><span class="section-number-3">2.24.</span> <a href="https://github.com/hohn/codeql-cli-end-to-end">https://github.com/hohn/codeql-cli-end-to-end</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="CLI">CLI</span>&#xa0;<span class="bundle">bundle</span>&#xa0;<span class="admin">admin</span>&#xa0;<span class="integration">integration</span></span></h3>
+</div>
+
+<div id="outline-container-org77456ff" class="outline-3">
+<h3 id="org77456ff"><span class="section-number-3">2.25.</span> <a href="https://github.com/rvermeulen/codeql-bundle">https://github.com/rvermeulen/codeql-bundle</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="bundle">bundle</span></span></h3>
+</div>
+
+
+<div id="outline-container-org9db912d" class="outline-3">
+<h3 id="org9db912d"><span class="section-number-3">2.26.</span> <a href="https://github.com/knewbury01/codeql-workshop-nekohtml">https://github.com/knewbury01/codeql-workshop-nekohtml</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span></span></h3>
+</div>
+
+<div id="outline-container-orgcf6ca61" class="outline-3">
+<h3 id="orgcf6ca61"><span class="section-number-3">2.27.</span> <a href="https://github.com/rvermeulen/codeql-workshop-points-to-java">https://github.com/rvermeulen/codeql-workshop-points-to-java</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span></span></h3>
+<div class="outline-text-3" id="text-2-27">
 <p>
 To be refined&#x2026;
 </p>
@@ -700,70 +726,49 @@ Elements of Syntactical Program Analysis for Java
 </div>
 </div>
 
-<div id="outline-container-org388d1b7" class="outline-3">
-<h3 id="org388d1b7"><span class="section-number-3">2.25.</span> CodeQL workshop for Java: Finding a SQL injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span>&#xa0;<span class="sql">sql</span>&#xa0;<span class="cve">cve</span>&#xa0;<span class="advanced">advanced</span></span></h3>
-<div class="outline-text-3" id="text-2-25">
+<div id="outline-container-orgb227959" class="outline-3">
+<h3 id="orgb227959"><span class="section-number-3">2.28.</span> CodeQL workshop for Java: Finding a SQL injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span>&#xa0;<span class="sql">sql</span>&#xa0;<span class="cve">cve</span>&#xa0;<span class="advanced">advanced</span></span></h3>
+<div class="outline-text-3" id="text-2-28">
 <p>
 <a href="https://github.com/rvermeulen/codeql-workshop-cve-2021-21380">https://github.com/rvermeulen/codeql-workshop-cve-2021-21380</a> 
 </p>
 </div>
 </div>
 
-<div id="outline-container-org8a67b8d" class="outline-3">
-<h3 id="org8a67b8d"><span class="section-number-3">2.26.</span> <a href="https://github.com/hohn/codeql-java-workshop-sqlinjection-owasp">https://github.com/hohn/codeql-java-workshop-sqlinjection-owasp</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span>&#xa0;<span class="sql">sql</span></span></h3>
+<div id="outline-container-orga9270ae" class="outline-3">
+<h3 id="orga9270ae"><span class="section-number-3">2.29.</span> <a href="https://github.com/hohn/codeql-java-workshop-sqlinjection-owasp">https://github.com/hohn/codeql-java-workshop-sqlinjection-owasp</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span>&#xa0;<span class="sql">sql</span></span></h3>
 </div>
 
-<div id="outline-container-org00280fc" class="outline-3">
-<h3 id="org00280fc"><span class="section-number-3">2.27.</span> CodeQL cve 2022 35737&#xa0;&#xa0;&#xa0;<span class="tag"><span class="C">C</span>&#xa0;<span class="cve">cve</span>&#xa0;<span class="custom">custom</span></span></h3>
-<div class="outline-text-3" id="text-2-27">
+<div id="outline-container-org4ff14ad" class="outline-3">
+<h3 id="org4ff14ad"><span class="section-number-3">2.30.</span> Vulnerable Linux Driver&#xa0;&#xa0;&#xa0;<span class="tag"><span class="advanced">advanced</span>&#xa0;<span class="special_topic">special_topic</span></span></h3>
+<div class="outline-text-3" id="text-2-30">
+<p>
+A user-controlled size argument can lead to a buffer overflow.
+<a href="https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver">https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7355ed2" class="outline-3">
+<h3 id="org7355ed2"><span class="section-number-3">2.31.</span> CodeQL cve 2022 35737&#xa0;&#xa0;&#xa0;<span class="tag"><span class="C">C</span>&#xa0;<span class="cve">cve</span>&#xa0;<span class="custom">custom</span></span></h3>
+<div class="outline-text-3" id="text-2-31">
 <p>
 <a href="https://github.com/rvermeulen/codeql-cve-2022-35737">https://github.com/rvermeulen/codeql-cve-2022-35737</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org2af05e9" class="outline-3">
-<h3 id="org2af05e9"><span class="section-number-3">2.28.</span> <a href="https://github.com/rvermeulen/apache-struts-cve-2017-9805">https://github.com/rvermeulen/apache-struts-cve-2017-9805</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span>&#xa0;<span class="cve">cve</span>&#xa0;<span class="custom">custom</span></span></h3>
+<div id="outline-container-org1896800" class="outline-3">
+<h3 id="org1896800"><span class="section-number-3">2.32.</span> <a href="https://github.com/rvermeulen/apache-struts-cve-2017-9805">https://github.com/rvermeulen/apache-struts-cve-2017-9805</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span>&#xa0;<span class="cve">cve</span>&#xa0;<span class="custom">custom</span></span></h3>
 </div>
 
-<div id="outline-container-org2898b83" class="outline-3">
-<h3 id="org2898b83"><span class="section-number-3">2.29.</span> Pack vs. Bundles&#xa0;&#xa0;&#xa0;<span class="tag"><span class="admin">admin</span>&#xa0;<span class="integration">integration</span></span></h3>
-<div class="outline-text-3" id="text-2-29">
-<ul class="org-ul">
-<li>bundles include packs and library &#x2013; just like the public ones.</li>
-<li><a href="https://github.com/advanced-security-demo/codeql-bundle-demo/releases/tag/codeql-bundle-20221211">https://github.com/advanced-security-demo/codeql-bundle-demo/releases/tag/codeql-bundle-20221211</a></li>
-<li><a href="https://github.com/advanced-security-demo/codeql-bundle-demo/actions/workflows/bundle.yaml">https://github.com/advanced-security-demo/codeql-bundle-demo/actions/workflows/bundle.yaml</a></li>
-</ul>
-</div>
+<div id="outline-container-org1087e5e" class="outline-3">
+<h3 id="org1087e5e"><span class="section-number-3">2.33.</span> <a href="https://github.com/hohn/codeql-dataflow-ii-java">https://github.com/hohn/codeql-dataflow-ii-java</a></h3>
 </div>
 
-<div id="outline-container-org61b5eca" class="outline-3">
-<h3 id="org61b5eca"><span class="section-number-3">2.30.</span> <a href="https://github.com/hohn/codeql-cli-end-to-end">https://github.com/hohn/codeql-cli-end-to-end</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="CLI">CLI</span>&#xa0;<span class="bundle">bundle</span>&#xa0;<span class="admin">admin</span>&#xa0;<span class="integration">integration</span></span></h3>
-</div>
-<div id="outline-container-org9ea7a93" class="outline-3">
-<h3 id="org9ea7a93"><span class="section-number-3">2.31.</span> <a href="https://github.com/rvermeulen/codeql-bundle">https://github.com/rvermeulen/codeql-bundle</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="bundle">bundle</span></span></h3>
-</div>
-
-<div id="outline-container-org2e0e6e5" class="outline-3">
-<h3 id="org2e0e6e5"><span class="section-number-3">2.32.</span> <a href="https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp">https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp</a></h3>
-</div>
-
-<div id="outline-container-orgcc6aab4" class="outline-3">
-<h3 id="orgcc6aab4"><span class="section-number-3">2.33.</span> <a href="https://github.com/hohn/codeql-dataflow-ii-java">https://github.com/hohn/codeql-dataflow-ii-java</a></h3>
-</div>
-
-<div id="outline-container-org608cf41" class="outline-3">
-<h3 id="org608cf41"><span class="section-number-3">2.34.</span> codeql workshop elements of syntactical program analysis cpp</h3>
+<div id="outline-container-org2b564c5" class="outline-3">
+<h3 id="org2b564c5"><span class="section-number-3">2.34.</span> <a href="https://github.com/rvermeulen/codeql-workshop-introduction-to-javascript">https://github.com/rvermeulen/codeql-workshop-introduction-to-javascript</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="javascript">javascript</span></span></h3>
 <div class="outline-text-3" id="text-2-34">
-<p>
-<a href="https://github.com/rvermeulen/codeql-workshop-elements-of-syntactical-program-analysis-cpp">https://github.com/rvermeulen/codeql-workshop-elements-of-syntactical-program-analysis-cpp</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgcfc467f" class="outline-3">
-<h3 id="orgcfc467f"><span class="section-number-3">2.35.</span> <a href="https://github.com/rvermeulen/codeql-workshop-introduction-to-javascript">https://github.com/rvermeulen/codeql-workshop-introduction-to-javascript</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="javascript">javascript</span></span></h3>
-<div class="outline-text-3" id="text-2-35">
 <p>
 CodeQL: introduction to javascript.  Old workshop, originally written by @hohn,
 now revised.
@@ -771,57 +776,18 @@ now revised.
 </div>
 </div>
 
-<div id="outline-container-org5ac7cfb" class="outline-3">
-<h3 id="org5ac7cfb"><span class="section-number-3">2.36.</span> codeql workshop control flow java</h3>
-<div class="outline-text-3" id="text-2-36">
+<div id="outline-container-orgfedbad2" class="outline-3">
+<h3 id="orgfedbad2"><span class="section-number-3">2.35.</span> codeql workshop control flow java</h3>
+<div class="outline-text-3" id="text-2-35">
 <p>
 <a href="https://github.com/rvermeulen/codeql-workshop-control-flow-java">https://github.com/rvermeulen/codeql-workshop-control-flow-java</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org5d7b756" class="outline-3">
-<h3 id="org5d7b756"><span class="section-number-3">2.37.</span> <a href="https://github.com/rvermeulen/codeql-workshop-dataflow-2-java">https://github.com/rvermeulen/codeql-workshop-dataflow-2-java</a></h3>
-</div>
-
-<div id="outline-container-org4bd51f4" class="outline-3">
-<h3 id="org4bd51f4"><span class="section-number-3">2.38.</span> codeql workshop control flow cpp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="cpp">cpp</span>&#xa0;<span class="control_flow">control_flow</span>&#xa0;<span class="1">1</span></span></h3>
-<div class="outline-text-3" id="text-2-38">
-<p>
-<a href="https://github.com/hohn/codeql-workshop-control-flow-cpp">https://github.com/hohn/codeql-workshop-control-flow-cpp</a>
-<a href="https://github.com/rvermeulen/codeql-workshop-control-flow-cpp">https://github.com/rvermeulen/codeql-workshop-control-flow-cpp</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-org702ce86" class="outline-3">
-<h3 id="org702ce86"><span class="section-number-3">2.39.</span> SQL injection example cpp simple</h3>
-<div class="outline-text-3" id="text-2-39">
-<p>
-<a href="https://github.com/hohn/codeql-dataflow-sql-injection">https://github.com/hohn/codeql-dataflow-sql-injection</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgecb2fed" class="outline-3">
-<h3 id="orgecb2fed"><span class="section-number-3">2.40.</span> together</h3>
-<div class="outline-text-3" id="text-2-40">
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #a0522d;">lp1</span> = <span style="color: #483d8b;">list</span>(nx.all_simple_paths(G, <span style="color: #8b2252;">"l-090"</span>, <span style="color: #8b2252;">"l-190"</span>)),
-lp1
-
-<span style="color: #a0522d;">G2</span> = G.copy()
-<span style="color: #a0522d;">nv2</span> = G2.nodes(),
-<span style="color: #a020f0;">for</span> p0 <span style="color: #a020f0;">in</span> <span style="color: #a0522d;">lp1</span>:,
-    <span style="color: #a020f0;">for</span> n0 <span style="color: #a020f0;">in</span> p0:,
-        nv2[n0][<span style="color: #8b2252;">'fillcolor'</span>] = <span style="color: #8b2252;">'lightblue'</span>,
-        nv2[n0][<span style="color: #8b2252;">'style'</span>] = <span style="color: #8b2252;">'filled'</span>,
-<span style="color: #a0522d;">G3</span> = nx.relabel_nodes(G2, r0),
-
-draw(G3)
-</pre>
-</div>
-
+<div id="outline-container-orgf687bca" class="outline-3">
+<h3 id="orgf687bca"><span class="section-number-3">2.36.</span> <a href="https://github.com/rvermeulen/codeql-workshop-dataflow-2-java">https://github.com/rvermeulen/codeql-workshop-dataflow-2-java</a></h3>
+<div class="outline-text-3" id="text-2-36">
 </div>
 </div>
 </div>
@@ -829,7 +795,7 @@ draw(G3)
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Michael Hohn</p>
-<p class="date">Created: 2023-07-04 Tue 12:46</p>
+<p class="date">Created: 2023-07-04 Tue 23:04</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

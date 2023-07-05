@@ -102,6 +102,7 @@
    #+END_SRC
 
    #+RESULTS:
+   [[file:g001.svg]]
 
 ** https://github.com/advanced-security/codeql-workshops-staging/blob/master/cpp/introduction/session-3/codeql-workshop-cpp-global-data-flow.md
 
@@ -218,15 +219,28 @@
    #+RESULTS:
    [[file:]]
 
-** codeql-workshop-runtime-values-c
-   Reasoning about runtime values C/C++
-   https://github.com/kraiouchkine/codeql-workshop-runtime-values-c
-  
-   # cd ~/local
-   # git clone git@github.com:hohn/codeql-workshop-runtime-values-c.git
-   # cd /Users/hohn/local/codeql-workshop-runtime-values-c
+
+** codeql workshop control flow cpp                    :cpp:control_flow:1:
+   https://github.com/hohn/codeql-workshop-control-flow-cpp
+   https://github.com/rvermeulen/codeql-workshop-control-flow-cpp
+
+** https://github.com/rvermeulen/codeql-workshop-elements-of-syntactical-program-analysis-cpp
+   codeql workshop elements of syntactical program analysis cpp
+
+** https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp
+   https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp/tree/main/queries
+
+** https://github.com/kraiouchkine/codeql-workshop-dataflow-c
+   Workshop Title: LDF-203: Dataflow II
+
+   - Modules in this workshop:
+     - Customizing the Dataflow Graph,
+     - Barrier Guards,
+     - Combining Dataflow and Control Flow
 
 ** https://github.com/kraiouchkine/codeql-workshop-runtime-values-c
+
+   Reasoning about runtime values C/C++
 
    LDF-204: Reasoning about Runtime Values
    - Modules in this workshop:
@@ -241,15 +255,9 @@
      - Range Analysis
      - HashCons
 
+
 ** https://github.com/kraiouchkine/codeql-workshop-dangling-pointers-c
 ** fork: https://github.com/hohn/codeql-workshop-dangling-pointers-c
-** https://github.com/kraiouchkine/codeql-workshop-dataflow-c
-   Workshop Title: LDF-203: Dataflow II
-
-   - Modules in this workshop:
-     - Customizing the Dataflow Graph,
-     - Barrier Guards,
-     - Combining Dataflow and Control Flow
 
 ** https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver
    Workshop Title: LDF-203: Dataflow II
@@ -264,28 +272,35 @@
 
    although that's more experimental
 
-** https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp/tree/main/queries
 ** https://github.com/knewbury01/codeql-workshop-integer-conversion.git
+
 ** fork: https://github.com/hohn/codeql-workshop-integer-conversion.git
     
 ** GHAS config
    https://github.com/knewbury01/WebGoat
    https://github.com/knewbury01/log4j-shell-poc
-** codeql-workshop-nekohtml                                          :java:
-   https://github.com/knewbury01/codeql-workshop-nekohtml
+
 ** CLI / VS Code                                                        :IDE:
    - https://github.com/knewbury01/codeql-cli-vscode-setup
    - original: https://github.com/hohn/codeql-cli-vscode-setup
-
-** Vulnerable Linux Driver                           :advanced:special_topic:
-   A user-controlled size argument can lead to a buffer overflow.
-   https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver
 
 ** Sample Project Layout                                      :cli:project:
    - https://gist.github.com/hohn/e86d691100e84e6f9a7e96162e0f3c42 (simple and
      intermediate) and
    - https://github.com/rvermeulen/codeql-example-project-layout (comprehensive)
      are starting points and have been used in various projects
+
+** Pack vs. Bundles                                       :admin:integration:
+   - bundles include packs and library -- just like the public ones.
+   - https://github.com/advanced-security-demo/codeql-bundle-demo/releases/tag/codeql-bundle-20221211
+   - https://github.com/advanced-security-demo/codeql-bundle-demo/actions/workflows/bundle.yaml
+
+** https://github.com/hohn/codeql-cli-end-to-end :CLI:bundle:admin:integration:
+
+** https://github.com/rvermeulen/codeql-bundle                     :bundle:
+    
+
+** https://github.com/knewbury01/codeql-workshop-nekohtml              :java:
 
 ** https://github.com/rvermeulen/codeql-workshop-points-to-java        :java:
    To be refined...
@@ -297,25 +312,16 @@
 
 ** https://github.com/hohn/codeql-java-workshop-sqlinjection-owasp :java:sql:
    
+** Vulnerable Linux Driver                           :advanced:special_topic:
+   A user-controlled size argument can lead to a buffer overflow.
+   https://github.com/rvermeulen/codeql-workshop-vulnerable-linux-driver
+
 ** CodeQL cve 2022 35737                                         :C:cve:custom:
    https://github.com/rvermeulen/codeql-cve-2022-35737
 
 ** https://github.com/rvermeulen/apache-struts-cve-2017-9805 :java:cve:custom:
 
-** Pack vs. Bundles                                       :admin:integration:
-   - bundles include packs and library -- just like the public ones.
-   - https://github.com/advanced-security-demo/codeql-bundle-demo/releases/tag/codeql-bundle-20221211
-   - https://github.com/advanced-security-demo/codeql-bundle-demo/actions/workflows/bundle.yaml
-
-** https://github.com/hohn/codeql-cli-end-to-end :CLI:bundle:admin:integration:
-** https://github.com/rvermeulen/codeql-bundle                     :bundle:
-    
-** https://github.com/rvermeulen/codeql-workshop-dataflow-2-cpp
-
 ** https://github.com/hohn/codeql-dataflow-ii-java
-
-** codeql workshop elements of syntactical program analysis cpp
-   https://github.com/rvermeulen/codeql-workshop-elements-of-syntactical-program-analysis-cpp
 
 ** https://github.com/rvermeulen/codeql-workshop-introduction-to-javascript :javascript:
 
@@ -327,27 +333,5 @@
 
 ** https://github.com/rvermeulen/codeql-workshop-dataflow-2-java
 
-** codeql workshop control flow cpp                    :cpp:control_flow:1:
-   https://github.com/hohn/codeql-workshop-control-flow-cpp
-   https://github.com/rvermeulen/codeql-workshop-control-flow-cpp
-
-** SQL injection example cpp simple
-   https://github.com/hohn/codeql-dataflow-sql-injection
-
-** together
-   #+BEGIN_SRC python
-     lp1 = list(nx.all_simple_paths(G, "l-090", "l-190")),
-     lp1
-
-     G2 = G.copy()
-     nv2 = G2.nodes(),
-     for p0 in lp1:,
-         for n0 in p0:,
-             nv2[n0]['fillcolor'] = 'lightblue',
-             nv2[n0]['style'] = 'filled',
-     G3 = nx.relabel_nodes(G2, r0),
-
-     draw(G3)
-   #+END_SRC
 
 #+HTML: </div> 
