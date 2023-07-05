@@ -434,23 +434,6 @@
    #+RESULTS:
    [[file:cg170.svg]]
 
-** Together
-   #+BEGIN_SRC python :results file :session main :exports both :python ipython
-     G2 = G.copy()
-     nodes = G2.nodes()
-     for nd in nodes:
-         if "-start-" in nd:
-             nodes[nd]['shape'] = 'invhouse'
-         if "-goal-" in nd:
-             nodes[nd]['shape'] = 'house'
-
-     draw(G2, "gall.svg")
-     
-   #+END_SRC
-
-   #+RESULTS:
-   [[file:gall.svg]]
-
 ** https://github.com/kraiouchkine/codeql-workshop-runtime-values-c
 
    Reasoning about runtime values C/C++
@@ -585,6 +568,23 @@
 
    #+RESULTS:
    [[file:cg400.svg]]
+
+** Together
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     G2 = G.copy()
+     nodes = G2.nodes()
+     for nd in nodes:
+         if "-start-" in nd:
+             nodes[nd]['shape'] = 'invhouse'
+         if "-goal-" in nd:
+             nodes[nd]['shape'] = 'house'
+
+     draw(G2, "gall.svg")
+     
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:gall.svg]]
 
 ** https://github.com/knewbury01/codeql-workshop-integer-conversion.git
 
