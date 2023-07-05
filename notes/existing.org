@@ -304,11 +304,13 @@
      Gt = nx.DiGraph()
 
      add_path(
-         "c-start-150",
+         "c-start-160",
+         "c-df-100",
+         "c-guards-300",
          "ql-modules-100",
-         "ql-classes-100",
-         "c-ast-100",
-         "c-goal-150",
+         "c-df-global-100",
+         "c-df-partial_path_graph-300",
+         "c-goal-160",
      )
 
      # Set defaults
@@ -316,9 +318,11 @@
      Gt.graph['node']={'shape':'rect', 'fontsize':12}
      Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
 
-     draw(Gt, "cg150.svg")
+     draw(Gt, "cg160.svg")
    #+END_SRC
 
+   #+RESULTS:
+   [[file:cg160.svg]]
 
 ** https://github.com/kraiouchkine/codeql-workshop-dataflow-c
    Workshop Title: LDF-203: Dataflow II
