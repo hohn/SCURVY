@@ -222,34 +222,6 @@
 #    #+RESULTS:
 #    [[file:g030.svg]]
 
-** https://github.com/advanced-security/codeql-workshops-staging/blob/master/java/codeql-java-workshop-sqlinjection.md
-
-   #+BEGIN_SRC python :results file :session main :exports both :python ipython
-     Gt = nx.DiGraph()
-
-     add_prereqs(
-         "java-start-100",
-     )
-
-     add_path(
-         "java-start-100",
-         "java-ast-100",
-         "java-df-local-100",
-         "java-df-global-100",
-         "java-goal-110",
-     )
-
-     # Set defaults
-     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
-     Gt.graph['node']={'shape':'rect', 'fontsize':12}
-     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
-
-     draw(Gt, "jg010.svg")
-   #+END_SRC
-
-   #+RESULTS:
-   [[file:jg010.svg]]
-
 ** https://github.com/rvermeulen/codeql-workshop-control-flow-cpp
 
    In this workshop we will explore control flow, how it is represented by the
@@ -623,6 +595,34 @@
 
 ** CodeQL workshop for Java: Finding a SQL injection  :java:sql:cve:advanced:
    https://github.com/rvermeulen/codeql-workshop-cve-2021-21380 
+
+** https://github.com/advanced-security/codeql-workshops-staging/blob/master/java/codeql-java-workshop-sqlinjection.md
+
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     Gt = nx.DiGraph()
+
+     add_prereqs(
+         "java-start-100",
+     )
+
+     add_path(
+         "java-start-100",
+         "java-ast-100",
+         "java-df-local-100",
+         "java-df-global-100",
+         "java-goal-110",
+     )
+
+     # Set defaults
+     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
+     Gt.graph['node']={'shape':'rect', 'fontsize':12}
+     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+
+     draw(Gt, "jg010.svg")
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:jg010.svg]]
 
 ** https://github.com/hohn/codeql-java-workshop-sqlinjection-owasp :java:sql:
    

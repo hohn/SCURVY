@@ -23,8 +23,8 @@
 <!-- c&#45;df&#45;global&#45;100&#45;&gt;c&#45;start&#45;160 -->
 <g id="edge1" class="edge">
 <title>c&#45;df&#45;global&#45;100&#45;&gt;c&#45;start&#45;160</title>
-<path fill="none" stroke="#bdbdbd" d="M55.87,-359.7C61,-351.73 67.19,-342.1 72.87,-333.26"/>
-<polygon fill="#bdbdbd" stroke="#bdbdbd" points="76.29,-335.41 78.75,-325.1 70.4,-331.62 76.29,-335.41"/>
+<path fill="none" stroke="#006d2c" d="M55.87,-359.7C61,-351.73 67.19,-342.1 72.87,-333.26"/>
+<polygon fill="#006d2c" stroke="#006d2c" points="76.29,-335.41 78.75,-325.1 70.4,-331.62 76.29,-335.41"/>
 </g>
 <!-- c&#45;guards&#45;300 -->
 <g id="node3" class="node">
@@ -35,8 +35,8 @@
 <!-- c&#45;start&#45;160&#45;&gt;c&#45;guards&#45;300 -->
 <g id="edge2" class="edge">
 <title>c&#45;start&#45;160&#45;&gt;c&#45;guards&#45;300</title>
-<path fill="none" stroke="#bdbdbd" d="M89.75,-287.7C89.75,-280.24 89.75,-271.32 89.75,-262.97"/>
-<polygon fill="#bdbdbd" stroke="#bdbdbd" points="93.25,-263.1 89.75,-253.1 86.25,-263.1 93.25,-263.1"/>
+<path fill="none" stroke="#006d2c" d="M89.75,-287.7C89.75,-280.24 89.75,-271.32 89.75,-262.97"/>
+<polygon fill="#006d2c" stroke="#006d2c" points="93.25,-263.1 89.75,-253.1 86.25,-263.1 93.25,-263.1"/>
 </g>
 <!-- ql&#45;modules&#45;100 -->
 <g id="node5" class="node">
@@ -47,8 +47,8 @@
 <!-- c&#45;guards&#45;300&#45;&gt;ql&#45;modules&#45;100 -->
 <g id="edge4" class="edge">
 <title>c&#45;guards&#45;300&#45;&gt;ql&#45;modules&#45;100</title>
-<path fill="none" stroke="#bdbdbd" d="M89.75,-215.7C89.75,-208.24 89.75,-199.32 89.75,-190.97"/>
-<polygon fill="#bdbdbd" stroke="#bdbdbd" points="93.25,-191.1 89.75,-181.1 86.25,-191.1 93.25,-191.1"/>
+<path fill="none" stroke="#006d2c" d="M89.75,-215.7C89.75,-208.24 89.75,-199.32 89.75,-190.97"/>
+<polygon fill="#006d2c" stroke="#006d2c" points="93.25,-191.1 89.75,-181.1 86.25,-191.1 93.25,-191.1"/>
 </g>
 <!-- c&#45;df&#45;100 -->
 <g id="node4" class="node">
@@ -59,8 +59,8 @@
 <!-- c&#45;df&#45;100&#45;&gt;c&#45;start&#45;160 -->
 <g id="edge3" class="edge">
 <title>c&#45;df&#45;100&#45;&gt;c&#45;start&#45;160</title>
-<path fill="none" stroke="#bdbdbd" d="M124.38,-359.7C119.14,-351.73 112.82,-342.1 107.01,-333.26"/>
-<polygon fill="#bdbdbd" stroke="#bdbdbd" points="109.41,-331.54 100.99,-325.1 103.56,-335.38 109.41,-331.54"/>
+<path fill="none" stroke="#006d2c" d="M124.38,-359.7C119.14,-351.73 112.82,-342.1 107.01,-333.26"/>
+<polygon fill="#006d2c" stroke="#006d2c" points="109.41,-331.54 100.99,-325.1 103.56,-335.38 109.41,-331.54"/>
 </g>
 <!-- c&#45;df&#45;partial_path_graph&#45;300 -->
 <g id="node6" class="node">
@@ -71,8 +71,8 @@
 <!-- ql&#45;modules&#45;100&#45;&gt;c&#45;df&#45;partial_path_graph&#45;300 -->
 <g id="edge5" class="edge">
 <title>ql&#45;modules&#45;100&#45;&gt;c&#45;df&#45;partial_path_graph&#45;300</title>
-<path fill="none" stroke="#bdbdbd" d="M89.75,-143.7C89.75,-136.24 89.75,-127.32 89.75,-118.97"/>
-<polygon fill="#bdbdbd" stroke="#bdbdbd" points="93.25,-119.1 89.75,-109.1 86.25,-119.1 93.25,-119.1"/>
+<path fill="none" stroke="#006d2c" d="M89.75,-143.7C89.75,-136.24 89.75,-127.32 89.75,-118.97"/>
+<polygon fill="#006d2c" stroke="#006d2c" points="93.25,-119.1 89.75,-109.1 86.25,-119.1 93.25,-119.1"/>
 </g>
 <!-- c&#45;goal&#45;160 -->
 <g id="node7" class="node">
@@ -83,8 +83,8 @@
 <!-- c&#45;df&#45;partial_path_graph&#45;300&#45;&gt;c&#45;goal&#45;160 -->
 <g id="edge6" class="edge">
 <title>c&#45;df&#45;partial_path_graph&#45;300&#45;&gt;c&#45;goal&#45;160</title>
-<path fill="none" stroke="#bdbdbd" d="M89.75,-71.7C89.75,-64.24 89.75,-55.32 89.75,-46.97"/>
-<polygon fill="#bdbdbd" stroke="#bdbdbd" points="93.25,-47.1 89.75,-37.1 86.25,-47.1 93.25,-47.1"/>
+<path fill="none" stroke="#006d2c" d="M89.75,-71.7C89.75,-64.24 89.75,-55.32 89.75,-46.97"/>
+<polygon fill="#006d2c" stroke="#006d2c" points="93.25,-47.1 89.75,-37.1 86.25,-47.1 93.25,-47.1"/>
 </g>
 </g>
 </svg>
