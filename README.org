@@ -2,7 +2,9 @@
 #+OPTIONS: H:3 num:t \n:nil @:t ::t |:t ^:{} f:t *:t TeX:t LaTeX:t skip:nil p:nil
 #+OPTIONS: org-confirm-babel-evaluate:nil
 
-UNDER CONSTRUCTION!!
+#+attr_html: :width 50%
+#+attr_latex: :width 50%
+[[./images/under-construction.png]]
 
 * SCURVY Introduction and Purpose
   SCURVY is the 
@@ -33,9 +35,10 @@ UNDER CONSTRUCTION!!
   2. Open notes/existing.html
   3. Browse.
 
-  *or* online
+  *or* online.  The two most relevant files:
 
-  https://htmlpreview.github.io/?https://github.com/hohn/SCURVY/blob/master/notes/existing.html
+  1. https://htmlpreview.github.io/?https://github.com/hohn/SCURVY/blob/master/notes/existing.html
+  2. https://github.com/hohn/SCURVY/blob/master/notes/gall.pdf
 
 * Development Setup
   SCURVY uses https://networkx.org for graph manipulation, graphviz for drawing,
