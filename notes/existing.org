@@ -29,6 +29,13 @@
 
 ** TODO Use vs. learning
    Some modules are prerequisites for a workshop, so they are /used/ but /not taught/.
+** TODO Paths for new workshops
+   - [ ] Paths for new workshops, with differen node shapes.
+   - [ ] "Reinforces" entries for paths?  Same as prerequisites.
+   - [ ] focus on C
+   - [ ] Parallel graphs for other languages.
+   - [ ] Feedback
+
 ** Common
    #+BEGIN_SRC python :results value pp :session main :exports both :python ipython
      import networkx as nx
@@ -559,9 +566,38 @@
    [[file:gall.svg]]
 
 ** https://github.com/knewbury01/codeql-workshop-integer-conversion.git
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     Gt = nx.DiGraph()
+
+     add_prereqs(
+         "c-start-210",
+         "c-ast-100",
+         "c-df-local-100"
+         "ql-predicates-100",
+         "ql-classes-100",
+         "ql-select-100",
+     )
+
+     add_path(
+         "c-start-210",
+         "c-types-200",
+         "ql-casts-110",
+         "c-goal-210",
+     )
+
+     # Set defaults
+     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
+     Gt.graph['node']={'shape':'rect', 'fontsize':12}
+     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+
+     draw(Gt, "cg210.svg")
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:cg210.svg]]
 
 ** fork: https://github.com/hohn/codeql-workshop-integer-conversion.git
-    
+
 ** GHAS config
    https://github.com/knewbury01/WebGoat
    https://github.com/knewbury01/log4j-shell-poc
