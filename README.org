@@ -82,9 +82,3 @@
   - https://networkx.org/documentation/latest/reference/readwrite/gml.html
   - https://networkx.org/documentation/latest/reference/drawing.html
 
-* TODO SCURVY: basics
-  - [ ] existing mapping
-  - [ ] pre-commit rendering hook
-  - [ ] rendering pipeline
-  - [ ] 
-  
