@@ -30,9 +30,10 @@
 ** TODO Use vs. learning
    Some modules are prerequisites for a workshop, so they are /used/ but /not taught/.
 ** TODO Paths for new workshops
-   - [ ] Paths for new workshops, with differen node shapes.
-   - [ ] "Reinforces" entries for paths?  Same as prerequisites.
-   - [ ] focus on C
+   - [ ] Paths for new workshops, with different node shapes.
+   - [X] "Reinforces" entries for paths?  Same as prerequisites.
+   - [X] focus on C
+   - [ ] parallel edges for paths?
    - [ ] Parallel graphs for other languages.
    - [ ] Feedback
 
@@ -548,23 +549,6 @@
    #+RESULTS:
    [[file:cg400.svg]]
 
-** Together
-   #+BEGIN_SRC python :results file :session main :exports both :python ipython
-     G2 = G.copy()
-     nodes = G2.nodes()
-     for nd in nodes:
-         if "-start-" in nd:
-             nodes[nd]['shape'] = 'invhouse'
-         if "-goal-" in nd:
-             nodes[nd]['shape'] = 'house'
-
-     draw(G2, "gall.svg")
-     
-   #+END_SRC
-
-   #+RESULTS:
-   [[file:gall.svg]]
-
 ** https://github.com/knewbury01/codeql-workshop-integer-conversion.git
    #+BEGIN_SRC python :results file :session main :exports both :python ipython
      Gt = nx.DiGraph()
@@ -597,6 +581,24 @@
    [[file:cg210.svg]]
 
 ** fork: https://github.com/hohn/codeql-workshop-integer-conversion.git
+** Together
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     G2 = G.copy()
+     nodes = G2.nodes()
+     for nd in nodes:
+         if "-start-" in nd:
+             nodes[nd]['shape'] = 'invhouse'
+         if "-goal-" in nd:
+             nodes[nd]['shape'] = 'house'
+
+     draw(G2, "gall.svg")
+     
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:gall.svg]]
+
+
 
 ** GHAS config
    https://github.com/knewbury01/WebGoat

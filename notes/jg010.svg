@@ -23,8 +23,8 @@
 <!-- java&#45;start&#45;100&#45;&gt;java&#45;ast&#45;100 -->
 <g id="edge1" class="edge">
 <title>java&#45;start&#45;100&#45;&gt;java&#45;ast&#45;100</title>
-<path fill="none" stroke="#f16913" d="M51.88,-287.7C51.88,-280.24 51.88,-271.32 51.88,-262.97"/>
-<polygon fill="#f16913" stroke="#f16913" points="55.38,-263.1 51.88,-253.1 48.38,-263.1 55.38,-263.1"/>
+<path fill="none" stroke="#a63603" d="M51.88,-287.7C51.88,-280.24 51.88,-271.32 51.88,-262.97"/>
+<polygon fill="#a63603" stroke="#a63603" points="55.38,-263.1 51.88,-253.1 48.38,-263.1 55.38,-263.1"/>
 </g>
 <!-- java&#45;df&#45;local&#45;100 -->
 <g id="node3" class="node">
@@ -35,8 +35,8 @@
 <!-- java&#45;ast&#45;100&#45;&gt;java&#45;df&#45;local&#45;100 -->
 <g id="edge2" class="edge">
 <title>java&#45;ast&#45;100&#45;&gt;java&#45;df&#45;local&#45;100</title>
-<path fill="none" stroke="#f16913" d="M51.88,-215.7C51.88,-208.24 51.88,-199.32 51.88,-190.97"/>
-<polygon fill="#f16913" stroke="#f16913" points="55.38,-191.1 51.88,-181.1 48.38,-191.1 55.38,-191.1"/>
+<path fill="none" stroke="#a63603" d="M51.88,-215.7C51.88,-208.24 51.88,-199.32 51.88,-190.97"/>
+<polygon fill="#a63603" stroke="#a63603" points="55.38,-191.1 51.88,-181.1 48.38,-191.1 55.38,-191.1"/>
 </g>
 <!-- java&#45;df&#45;global&#45;100 -->
 <g id="node4" class="node">
@@ -47,8 +47,8 @@
 <!-- java&#45;df&#45;local&#45;100&#45;&gt;java&#45;df&#45;global&#45;100 -->
 <g id="edge3" class="edge">
 <title>java&#45;df&#45;local&#45;100&#45;&gt;java&#45;df&#45;global&#45;100</title>
-<path fill="none" stroke="#f16913" d="M51.88,-143.7C51.88,-136.24 51.88,-127.32 51.88,-118.97"/>
-<polygon fill="#f16913" stroke="#f16913" points="55.38,-119.1 51.88,-109.1 48.38,-119.1 55.38,-119.1"/>
+<path fill="none" stroke="#a63603" d="M51.88,-143.7C51.88,-136.24 51.88,-127.32 51.88,-118.97"/>
+<polygon fill="#a63603" stroke="#a63603" points="55.38,-119.1 51.88,-109.1 48.38,-119.1 55.38,-119.1"/>
 </g>
 <!-- java&#45;goal&#45;110 -->
 <g id="node5" class="node">
@@ -59,8 +59,8 @@
 <!-- java&#45;df&#45;global&#45;100&#45;&gt;java&#45;goal&#45;110 -->
 <g id="edge4" class="edge">
 <title>java&#45;df&#45;global&#45;100&#45;&gt;java&#45;goal&#45;110</title>
-<path fill="none" stroke="#f16913" d="M51.88,-71.7C51.88,-64.24 51.88,-55.32 51.88,-46.97"/>
-<polygon fill="#f16913" stroke="#f16913" points="55.38,-47.1 51.88,-37.1 48.38,-47.1 55.38,-47.1"/>
+<path fill="none" stroke="#a63603" d="M51.88,-71.7C51.88,-64.24 51.88,-55.32 51.88,-46.97"/>
+<polygon fill="#a63603" stroke="#a63603" points="55.38,-47.1 51.88,-37.1 48.38,-47.1 55.38,-47.1"/>
 </g>
 </g>
 </svg>
