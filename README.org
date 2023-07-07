@@ -38,7 +38,7 @@
   *or* online.  The two most relevant files:
 
   1. https://htmlpreview.github.io/?https://github.com/hohn/SCURVY/blob/master/notes/existing.html
-  2. https://github.com/hohn/SCURVY/blob/master/notes/gall.pdf
+  2. https://htmlpreview.github.io/?https://github.com/hohn/SCURVY/blob/master/notes/gall.svg
 
 * Development Setup
   SCURVY uses https://networkx.org for graph manipulation, graphviz for drawing,
