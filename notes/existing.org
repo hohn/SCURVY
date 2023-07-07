@@ -66,13 +66,26 @@
      colnum = 0
      def add_path(*path):
          global colnum
-         for ndi in range(0, len(path)-1):
+         # # serial path
+         # for ndi in range(0, len(path)-1):
+         #     Gt.add_node(path[ndi])
+         #     Gt.add_edge(path[ndi], path[ndi+1], color=sc.colors2[colnum])
+         #     G.add_node(path[ndi])
+         #     G.add_edge(path[ndi], path[ndi+1], color=sc.colors2[colnum])
+         # Gt.add_node(path[ndi+1])
+         # G.add_node(path[ndi+1])
+         # 
+         # Parallel paths
+         G.add_node(path[0])
+         Gt.add_node(path[0])
+         pend = len(path)-1
+         for ndi in range(1, pend):
              Gt.add_node(path[ndi])
-             Gt.add_edge(path[ndi], path[ndi+1], color=sc.colors2[colnum])
+             Gt.add_edge(path[0], path[ndi], color=sc.colors2[colnum])
+             Gt.add_edge(path[ndi], path[pend], color=sc.colors2[colnum])
              G.add_node(path[ndi])
-             G.add_edge(path[ndi], path[ndi+1], color=sc.colors2[colnum])
-         Gt.add_node(path[ndi+1])
-         G.add_node(path[ndi+1])
+             G.add_edge(path[0], path[ndi], color=sc.colors2[colnum])
+             G.add_edge(path[ndi], path[pend], color=sc.colors2[colnum])
          colnum += 1
 
      def add_prereqs(item, *prereqs):
@@ -152,7 +165,7 @@
          "c-taint-global-100",
          "c-lib-security-100",
          "c-df-global-100",
-         "c-goal-120",
+         "c-goal-110",
      )
 
      draw(Gt, "g010.svg")
@@ -326,7 +339,7 @@
      add_prereqs(
          "c-start-160",
          "c-df-global-100",
-         "c-df-100",
+         "c-df-local-100",
      )
 
      add_path(
@@ -597,8 +610,6 @@
 
    #+RESULTS:
    [[file:gall.svg]]
-
-
 
 ** GHAS config
    https://github.com/knewbury01/WebGoat
