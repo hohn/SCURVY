@@ -594,6 +594,38 @@
    [[file:cg210.svg]]
 
 ** fork: https://github.com/hohn/codeql-workshop-integer-conversion.git
+** Checkpoints
+
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     Gt = nx.DiGraph()
+
+     Gt.add_node("all-beginner", color="lightblue", shape="oval")
+     Gt.add_node("cp-beginner", color="lightblue", shape="oval")
+
+     Gt.add_edge("all-beginner", "c-start-100", color='black', penwidth=3)
+     Gt.add_edge("all-beginner", "c-start-150", color='black', penwidth=3)
+     Gt.add_edge("cp-beginner", "c-start-100", color='black', penwidth=3)
+     Gt.add_edge("cp-beginner", "c-start-150", color='black', penwidth=3)
+
+     G.add_node("all-beginner", color="lightblue", shape="oval")
+     G.add_node("cp-beginner", color="lightblue", shape="oval")
+
+     G.add_edge("all-beginner", "c-start-100", color='black', penwidth=3)
+     G.add_edge("all-beginner", "c-start-150", color='black', penwidth=3)
+     G.add_edge("cp-beginner", "c-start-100", color='black', penwidth=3)
+     G.add_edge("cp-beginner", "c-start-150", color='black', penwidth=3)
+
+     # Set defaults
+     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
+     Gt.graph['node']={'shape':'rect', 'fontsize':12}
+     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+
+     draw(Gt, "cp-beginner.svg")
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:cp-beginner.svg]]
+   
 ** Together
    #+BEGIN_SRC python :results file :session main :exports both :python ipython
      G2 = G.copy()
@@ -610,6 +642,7 @@
 
    #+RESULTS:
    [[file:gall.svg]]
+
 
 ** GHAS config
    https://github.com/knewbury01/WebGoat
