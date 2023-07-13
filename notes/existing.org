@@ -406,7 +406,7 @@
          "ql-choices-100",
 
          "ql-predicates-100",
-         "c-df-100",
+         "c-df-local-100",
          "c-df-global-100", 
      )
 
@@ -443,7 +443,7 @@
      add_prereqs(
          "c-start-380",
          "c-ast-100",
-         "c-df-100",
+         "c-df-local-100",
          "ql-exists-100",
          "ql-predicates-100",
          "ql-classes-100",
@@ -569,7 +569,7 @@
      add_prereqs(
          "c-start-210",
          "c-ast-100",
-         "c-df-local-100"
+         "c-df-local-100",
          "ql-predicates-100",
          "ql-classes-100",
          "ql-select-100",
@@ -594,38 +594,6 @@
    [[file:cg210.svg]]
 
 ** fork: https://github.com/hohn/codeql-workshop-integer-conversion.git
-** Checkpoints
-
-   #+BEGIN_SRC python :results file :session main :exports both :python ipython
-     Gt = nx.DiGraph()
-
-     Gt.add_node("all-beginner", color="lightblue", shape="oval")
-     Gt.add_node("cp-beginner", color="lightblue", shape="oval")
-
-     Gt.add_edge("all-beginner", "c-start-100", color='black', penwidth=3)
-     Gt.add_edge("all-beginner", "c-start-150", color='black', penwidth=3)
-     Gt.add_edge("cp-beginner", "c-start-100", color='black', penwidth=3)
-     Gt.add_edge("cp-beginner", "c-start-150", color='black', penwidth=3)
-
-     G.add_node("all-beginner", color="lightblue", shape="oval")
-     G.add_node("cp-beginner", color="lightblue", shape="oval")
-
-     G.add_edge("all-beginner", "c-start-100", color='black', penwidth=3)
-     G.add_edge("all-beginner", "c-start-150", color='black', penwidth=3)
-     G.add_edge("cp-beginner", "c-start-100", color='black', penwidth=3)
-     G.add_edge("cp-beginner", "c-start-150", color='black', penwidth=3)
-
-     # Set defaults
-     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
-     Gt.graph['node']={'shape':'rect', 'fontsize':12}
-     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
-
-     draw(Gt, "cp-beginner.svg")
-   #+END_SRC
-
-   #+RESULTS:
-   [[file:cp-beginner.svg]]
-   
 ** Together
    #+BEGIN_SRC python :results file :session main :exports both :python ipython
      G2 = G.copy()
@@ -637,12 +605,129 @@
              nodes[nd]['shape'] = 'house'
 
      draw(G2, "gall.svg")
-     
    #+END_SRC
 
    #+RESULTS:
    [[file:gall.svg]]
 
+** Checkpoints
+
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     Gt = nx.DiGraph()
+
+     def add_checkpoint(name, *entrypoints):
+         global Gt, G
+         for graph in [Gt, G]:
+             graph.add_node(name, style='filled', fillcolor="lightblue", shape="oval")
+             for ep in entrypoints:
+                 graph.add_edge(name, ep, color='black', penwidth=3)
+
+     def into_checkpoint(name, *entrypoints):
+         global Gt, G
+         for graph in [Gt, G]:
+             graph.add_node(name, style='filled', fillcolor="lightblue", shape="oval")
+             for ep in entrypoints:
+                 graph.add_edge(ep, name, color='black', penwidth=3)
+
+     # add_checkpoint(
+     #     "all-beginner",
+     #     "c-start-100",
+     #     "c-start-150"
+     # )
+
+     add_checkpoint(
+         "cp-beginner",
+         "c-start-100",
+         "c-start-150"
+     )
+
+     into_checkpoint(
+         "cp-ql-customizer",
+         "c-taint-local-100",
+         "c-df-local-100",
+         "c-ast-100",
+         "c-df-global-100",
+         "c-taint-global-100",
+     )
+
+     # Using all the previous dependencies
+     # 
+     # into_checkpoint(
+     #     "cp-ql-writer",
+     #     # All the previous dependencies
+     #     "c-taint-local-100",
+     #     "c-df-local-100",
+     #     "c-ast-100",
+     #     "c-df-global-100",
+     #     "c-taint-global-100",
+     #     # plus some more
+     #     "c-lib-security-100",
+     #     "c-cfg-100",
+     #     "ql-recursion-100",
+     #     "ql-predicates-100",
+     #     "ql-classes-100",
+     #     "ql-exists-100",
+     #     "ql-select-100",
+     # )
+
+     into_checkpoint(
+         "cp-ql-writer",
+         # All the previous checkpoints
+         "cp-ql-customizer",
+         # plus some more
+         "c-lib-security-100",
+         "c-cfg-100",
+         "ql-recursion-100",
+         "ql-predicates-100",
+         "ql-classes-100",
+         "ql-exists-100",
+         "ql-select-100",
+     )
+
+     # XX: more checkpoints
+
+     # Gt.add_node("all-beginner", style='filled', fillcolor="lightblue", shape="oval")
+     # Gt.add_node("cp-beginner", style='filled', fillcolor="lightblue", shape="oval")
+
+     # Gt.add_edge("all-beginner", "c-start-100", color='black', penwidth=3)
+     # Gt.add_edge("all-beginner", "c-start-150", color='black', penwidth=3)
+     # Gt.add_edge("cp-beginner", "c-start-100", color='black', penwidth=3)
+     # Gt.add_edge("cp-beginner", "c-start-150", color='black', penwidth=3)
+
+     # G.add_node("all-beginner", style='filled', fillcolor="lightblue", shape="oval")
+     # G.add_node("cp-beginner", style='filled', fillcolor="lightblue", shape="oval")
+
+     # G.add_edge("all-beginner", "c-start-100", color='black', penwidth=3)
+     # G.add_edge("all-beginner", "c-start-150", color='black', penwidth=3)
+     # G.add_edge("cp-beginner", "c-start-100", color='black', penwidth=3)
+     # G.add_edge("cp-beginner", "c-start-150", color='black', penwidth=3)
+
+     # Set defaults
+     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
+     Gt.graph['node']={'shape':'rect', 'fontsize':12}
+     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+
+     draw(Gt, "cp-beginner.svg")
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:cp-beginner.svg]]
+
+** Together with Checkpoints
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     G2 = G.copy()
+     nodes = G2.nodes()
+     for nd in nodes:
+         if "-start-" in nd:
+             nodes[nd]['shape'] = 'invhouse'
+         if "-goal-" in nd:
+             nodes[nd]['shape'] = 'house'
+
+     draw(G2, "gallcp.svg")
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:gallcp.svg]]
 
 ** GHAS config
    https://github.com/knewbury01/WebGoat
