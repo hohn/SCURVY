@@ -139,6 +139,8 @@
          "cli-build-100",
          "cli-build-300",
          "cli-sarif-300",
+         "ql-classes-100",
+         "ql-select-100",
          "c-goal-110",
      )
 
@@ -623,11 +625,13 @@
                  graph.add_edge(name, ep, color='black', penwidth=3)
 
      def into_checkpoint(name, *entrypoints):
+         global colnum
          global Gt, G
          for graph in [Gt, G]:
              graph.add_node(name, style='filled', fillcolor="lightblue", shape="oval")
              for ep in entrypoints:
-                 graph.add_edge(ep, name, color='black', penwidth=3)
+                 graph.add_edge(ep, name, color=sc.colors2[colnum], penwidth=3)
+         colnum += 1
 
      # add_checkpoint(
      #     "all-beginner",
@@ -648,6 +652,8 @@
          "c-ast-100",
          "c-df-global-100",
          "c-taint-global-100",
+         "ql-modules-100",
+         "c-lib-security-100",
      )
 
      # Using all the previous dependencies
@@ -671,17 +677,26 @@
      # )
 
      into_checkpoint(
-         "cp-ql-writer",
+         "cp-ql-writer-100",
          # All the previous checkpoints
          "cp-ql-customizer",
          # plus some more
-         "c-lib-security-100",
          "c-cfg-100",
          "ql-recursion-100",
          "ql-predicates-100",
          "ql-classes-100",
          "ql-exists-100",
          "ql-select-100",
+     )
+
+     into_checkpoint(
+         "cp-ql-writer-200",
+         # All the previous checkpoints
+         "cp-ql-writer-100",
+         # plus some more
+         "ql-choices-100",
+         "ql-dominators-100",
+         "c-goal-400",
      )
 
      # XX: more checkpoints
