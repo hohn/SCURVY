@@ -836,13 +836,41 @@
          "cp-ql-writer-100",
          color='black', penwidth=3)
 
+     #
+     drop_edges(
+         "cp-ql-customizer",
+         "c-taint-local-100",
+         "c-df-local-100",
+         "c-lib-security-100",
+         "ql-modules-100",
+         "c-ast-100",
+         "c-df-global-100",
+         "c-taint-global-100",
+     )
+
+     def new_edge(targ, *sources):
+         for src in sources:
+             G3.add_edge(
+                 src, 
+                 targ,
+                 color='black',
+                 penwidth=3,
+             )
+
+     new_edge(
+         "cp-ql-customizer",
+         "c-goal-150",
+         "c-goal-120",
+         "c-goal-100",
+         "c-goal-110",
+     )
+
      draw(G3, "gallcpc.svg")
 
    #+END_SRC
 
    #+RESULTS:
    [[file:]]
-
 
 ** Remove the content description nodes
    Best done by not adding them in the first place -- use a new graph?
