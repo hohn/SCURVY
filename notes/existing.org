@@ -896,8 +896,9 @@
    [[file:gallg4.svg]]
    
 
-** Substitute workshop nodes for start/goal nodes
-   Re-attach the out edges from goal nodes to workshop nodes.
+** Improve readability by using workshop names
+   Substitute workshop names in the labels of goal nodes.
+   
 ** Get checkpoint descriptions
    Use the union of workshops' content nodes to get goal descriptions, and the
    checkpoint descriptions from those.
