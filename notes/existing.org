@@ -744,6 +744,9 @@
    #+RESULTS:
    [[file:gallcp.svg]]
 
+** More compact detail nodes
+** Checkpoint dependecies moved to workshop ends
+* Other than C/C++
 ** GHAS config
    https://github.com/knewbury01/WebGoat
    https://github.com/knewbury01/log4j-shell-poc
