@@ -39,7 +39,9 @@
 
   1. https://htmlpreview.github.io/?https://github.com/hohn/SCURVY/blob/master/notes/existing.html
   2. https://htmlpreview.github.io/?https://github.com/hohn/SCURVY/blob/master/notes/gall.svg
-  2. https://htmlpreview.github.io/?https://github.com/hohn/SCURVY/blob/master/notes/gallcp.svg
+  3. https://htmlpreview.github.io/?https://github.com/hohn/SCURVY/blob/master/notes/gallcp.svg
+  4. By removing the content description nodes, we get the simplified graph 
+     https://htmlpreview.github.io/?https://github.com/hohn/SCURVY/blob/master/notes/gallg4.svg
 
 * Development Setup
   SCURVY uses https://networkx.org for graph manipulation, graphviz for drawing,
