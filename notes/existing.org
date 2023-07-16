@@ -759,6 +759,14 @@
              if not ("-goal-" in nd or "-start-" in nd):
                      nodes[nd]['shape'] = 'plain'
                      nodes[nd]['width'] = '0.020'
+
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:]]
+
+** Checkpoint dependencies moved to workshop ends
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
      # Manually manipulate to get started
      G3.remove_edge("ql-choices-100", 
                     "cp-ql-writer-200",
@@ -771,6 +779,7 @@
      def drop_edges(target, *sources):
          for src in sources:
              G3.remove_edge(src, target)
+
      drop_edges(
          "cp-ql-writer-100",
          "ql-predicates-100",
@@ -781,15 +790,24 @@
          "c-goal-100",
          "cp-ql-writer-200",
          color='black', penwidth=3)
+     #
+     drop_edges(
+         "cp-ql-writer-100",
+         "ql-classes-100",
+     )
+     # G3.add_edge(
+     #     "c-goal-100",
+     #     "cp-ql-writer-200",
+     #     color='black', penwidth=3)
 
      draw(G3, "gallcpc.svg")
 
    #+END_SRC
 
    #+RESULTS:
-   [[file:gallcpc.svg]]
+   [[file:]]
 
-** Checkpoint dependencies moved to workshop ends
+
 ** Remove the content description nodes
    Best done by not adding them in the first place -- use a new graph?
 ** Substitute workshop nodes for start/goal nodes
