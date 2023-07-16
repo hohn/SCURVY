@@ -140,8 +140,10 @@
          "cli-build-300",
          "cli-sarif-300",
          "ql-classes-100",
+         "ql-predicates-100",        # XX: not yet
+         "ql-exists-100",            # XX: not yet
          "ql-select-100",
-         "c-goal-110",
+         "c-goal-100",
      )
 
      draw(G, 'g001.svg')
@@ -613,7 +615,6 @@
    [[file:gall.svg]]
 
 ** Checkpoints
-
    #+BEGIN_SRC python :results file :session main :exports both :python ipython
      Gt = nx.DiGraph()
 
@@ -745,6 +746,49 @@
    [[file:gallcp.svg]]
 
 ** More compact detail nodes
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     G3 = G.copy()
+     nodes = G3.nodes()
+     for nd in nodes:
+         if "-start-" in nd:
+             nodes[nd]['shape'] = 'invhouse'
+         if "-goal-" in nd:
+             nodes[nd]['shape'] = 'house'
+         # De-emphasize the content description nodes
+         if nd.startswith("c-") or nd.startswith("ql-"):
+             if not ("-goal-" in nd or "-start-" in nd):
+                     nodes[nd]['shape'] = 'plain'
+                     nodes[nd]['width'] = '0.020'
+     # Manually manipulate to get started
+     G3.remove_edge("ql-choices-100", 
+                    "cp-ql-writer-200",
+                   )
+     G3.remove_edge("ql-dominators-100", 
+                    "cp-ql-writer-200",
+                   )
+     G3.add_edge("c-goal-140", "cp-ql-writer-200" , color='black', penwidth=3)
+
+     def drop_edges(target, *sources):
+         for src in sources:
+             G3.remove_edge(src, target)
+     drop_edges(
+         "cp-ql-writer-100",
+         "ql-predicates-100",
+         "ql-select-100",
+         "ql-exists-100",
+     )
+     G3.add_edge(
+         "c-goal-100",
+         "cp-ql-writer-200",
+         color='black', penwidth=3)
+
+     draw(G3, "gallcpc.svg")
+
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:gallcpc.svg]]
+
 ** Checkpoint dependecies moved to workshop ends
 * Other than C/C++
 ** GHAS config
