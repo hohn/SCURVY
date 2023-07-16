@@ -872,10 +872,30 @@
    #+RESULTS:
    [[file:]]
 
-** Remove the content description nodes
+** Simplify the Graph by removing the content description nodes
    Best done by not adding them in the first place -- use a new graph?
 
    Or remove all by string match.
+
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     G4 = G3.copy()
+
+     # raises RuntimeError: dictionary changed size during iteration
+     # nodes = G4.nodes()
+
+     nodes = list(G4.nodes())
+     for nd in nodes:
+         if not "-goal-" in nd:
+             if nd.startswith("c-"):
+                 G4.remove_node(nd)
+
+     draw(G4, "gallg4.svg")
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:gallg4.svg]]
+   
+
 ** Substitute workshop nodes for start/goal nodes
    Re-attach the out edges from goal nodes to workshop nodes.
 ** Get checkpoint descriptions

@@ -1,6 +1,6 @@
 :root {
-    --margin-left: 40%;
-    --body-width: 60%;
+    --margin-left: 30%;
+    --body-width: 70%;
 }
 
 /* The sum of width and margin percentages must not exceed 100.*/
@@ -24,6 +24,15 @@ div#toc {
     height: calc(100% - 10px);
 
 }
+
+/*
+ * .org-svg {
+ *     float: right;
+ *     width: 1.2*var(--body-width);
+ *     /\* match toc, org-content, postamble *\/
+ *     margin-left: 2*var(--margin-left);
+ * }
+ */
 
 div#org-content {
     float: right;
