@@ -124,7 +124,7 @@
    #+RESULTS:
    : 'ok'
 
-** https://github.com/hohn/codeql-dataflow-sql-injection
+** https://github.com/hohn/codeql-dataflow-sql-injection, C
    Data Flow Intro, SQL Injection, C
 
    #+BEGIN_SRC python :results file :session main :exports both :python ipython
@@ -136,9 +136,6 @@
          "c-start-100",
          "c-ast-100",
          "c-df-global-100",
-         "cli-build-100",
-         "cli-build-300",
-         "cli-sarif-300",
          "ql-classes-100",
          "ql-predicates-100",        # XX: not yet
          "ql-exists-100",            # XX: not yet
@@ -152,6 +149,34 @@
    #+RESULTS:
    [[file:g001.svg]]
 
+** https://github.com/hohn/codeql-dataflow-sql-injection, cli
+
+   #+BEGIN_SRC python :results file :session main :exports both :python ipython
+     Gt = nx.DiGraph()
+
+     add_prereqs(
+         "c-start-105",
+     )
+
+     add_path(
+         "c-start-105",
+         "cli-build-100",
+         "cli-build-300",
+         "cli-sarif-300",
+         "c-goal-105",
+     )
+
+     # Set defaults
+     Gt.graph['graph']={'rankdir':'TD', 'fontsize':9}
+     Gt.graph['node']={'shape':'rect', 'fontsize':12}
+     Gt.graph['edges']={'arrowsize':'4.0', 'fontsize':12}
+
+     draw(Gt, 'g0015.svg')
+   #+END_SRC   
+
+   #+RESULTS:
+   [[file:g0015.svg]]
+   
 ** https://github.com/advanced-security/codeql-workshops-staging/blob/master/cpp/introduction/session-3/codeql-workshop-cpp-global-data-flow.md
 
    #+BEGIN_SRC python :results file :session main :exports both :python ipython
@@ -800,6 +825,17 @@
      #     "cp-ql-writer-200",
      #     color='black', penwidth=3)
 
+     #
+     drop_edges(
+         "cp-ql-writer-100",
+         "ql-recursion-100",
+         "c-cfg-100",
+     )
+     G3.add_edge(
+         "c-goal-140",
+         "cp-ql-writer-100",
+         color='black', penwidth=3)
+
      draw(G3, "gallcpc.svg")
 
    #+END_SRC
@@ -810,6 +846,8 @@
 
 ** Remove the content description nodes
    Best done by not adding them in the first place -- use a new graph?
+
+   Or remove all by string match.
 ** Substitute workshop nodes for start/goal nodes
    Re-attach the out edges from goal nodes to workshop nodes.
 ** Get checkpoint descriptions
