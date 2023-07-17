@@ -35,7 +35,7 @@
      on workshops.  This simplifies the graph tremendously.
   4. Get a simple graph that shows the learning paths as paths from workshops 
      to learning checkpoints.
-  u
+
 * Existing workshops in single large repository
   The repository https://github.com/advanced-security/codeql-workshops-staging has
   a collection of workshops.  Some of them have been separated out below for
