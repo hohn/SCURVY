@@ -18,16 +18,21 @@
   more memorable.
 
   Using a [[file:notes/existing.org::*Existing workshops in single large repository][single, large repository]] for CodeQL workshops has numerous drawbacks
-  making it impractical in actual use.
+  making it impractical in actual use[fn:1].
 
   The one benefit it provides, a table of contents, can easily be provided for the
   collection of [[file:notes/existing.org::*Existing workshops in separate repositories][workshops that exist separately]].
 
-  This project is such a table of contents.  It also provides a higher-level view
-  of
-  - how workshops fit together
-  - how to set goals
-  - what parts of CodeQL are relevant to different audiences.
+  This project is such a table of contents.  Beyond a simple listing, it also
+  provides
+  1. for each workshop, a list of concepts it covers
+  2. a program-drawn map of how workshops fit together
+  3. a simple way to add goals and connect them to each other and the workshop
+     contents -- again via a program-drawn map
+  4. a stepwise procedure to simplify these maps
+
+  The goals can be chosen arbitrarily.  The procedure to simplify the maps is
+  always the same, only the details change with the goals.
 
 * Using this project
   On your desktop
@@ -85,3 +90,6 @@
   - https://networkx.org/documentation/latest/reference/readwrite/gml.html
   - https://networkx.org/documentation/latest/reference/drawing.html
 
+* Footnotes
+
+[fn:1] I'm the author of that collection, so this is hindsight.
